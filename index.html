@@ -1,1 +1,28 @@
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>코스피200 배당 알리미</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>코스피200 배당 알리미</h1>
+<p>주가와 배당 일정을 한눈에 확인하세요.</p>
+</header>
+<main>
+<input id="search" type="search" placeholder="종목명 또는 종목코드 검색">
+<select id="sort">
+<option value="name">종목명순</option>
+<option value="upside">목표주가 상승여력순</option>
+</select>
+<p id="updated">자료 기준일: 데이터 연결 전</p>
+<div id="stocks"></div>
+<p class="notice">실제 주가·배당·목표주가 데이터는 공식 자료 연동 후 표시됩니다.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
+
