@@ -1,21 +1,39 @@
 
+import os
 import json
-from pathlib import Path
+import urllib.parse
+import urllib.request
+from datetime import date
 
-DATA_FILE = Path("data/stocks.json")
+API_KEY = os.environ.get("OPENDART_API_KEY", "")
+
+def fetch_dividend(corp_code, year):
+    params = urllib.parse.urlencode({
+        "crtfc_key": API_KEY,
+        "corp_code": corp_code,
+        "bsns_year": str(year),
+        "reprt_code": "11011"
+    })
+    url = "https://opendart.fss.or.kr/api/alotMatter.json?" + params
+
+    with urllib.request.urlopen(url, timeout=30) as response:
+        return json.load(response)
 
 def main():
-    DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
+    if not API_KEY:
+        print("인증키가 등록되지 않았습니다.")
+        return
 
-    if DATA_FILE.exists():
-        data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
-    else:
-        data = {"updated": "데이터 연결 전", "stocks": []}
+    print("OpenDART 연결 시험 시작")
 
-    # 실제 주가·배당 데이터 수집 기능은
-    # 공식 데이터 공급원 연결 후 추가합니다.
-    print("데이터 파일 확인 완료")
-    print("현재 등록 종목:", len(data.get("stocks", [])))
+    try:
+        # 삼성전자 기업 고유번호
+        result = fetch_dividend("00126380", date.today().year - 1)
+        print("응답 상태:", result.get("status"))
+        print("응답 메시지:", result.get("message"))
+        print("배당정보 건수:", len(result.get("list", [])))
+    except Exception as error:
+        print("데이터 수집 오류:", str(error))
 
 if __name__ == "__main__":
     main()
