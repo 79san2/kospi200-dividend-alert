@@ -2,32 +2,59 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>코스피200 배당 알리미</title>
   <meta name="theme-color" content="#173b32">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/dividend-192.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
-  <header>
-    <h1>코스피200 배당 알리미</h1>
-    <p>보통주 1주당 배당금과 매수·보유 일정을 확인하세요.</p>
-    <button type="button" id="install-app" aria-expanded="false" aria-controls="install-help" hidden>앱 설치</button>
+  <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="4"/><path d="M7.5 3v4m9-4v4M3 10h18m-13 5h2m4 0h2"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 5.5A2.5 2.5 0 0 1 8.5 3h7A2.5 2.5 0 0 1 18 5.5V21l-6-4-6 4z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></symbol>
+  </svg>
+  <header class="mast">
+    <div class="mast-inner">
+      <div class="brand"><img src="icons/dividend-192.png" width="40" height="40" alt=""><div><span>KOSPI 200</span><h1>배당 알리미</h1></div></div>
+      <nav class="nav" aria-label="주 메뉴">
+        <button type="button" data-view="schedule" aria-current="page"><svg class="icon"><use href="#i-calendar"/></svg>배당 일정</button>
+        <button type="button" data-view="all"><svg class="icon"><use href="#i-grid"/></svg>전체 종목</button>
+        <button type="button" data-view="saved"><svg class="icon"><use href="#i-bookmark"/></svg>관심 종목</button>
+      </nav>
+      <div class="mast-actions">
+        <button type="button" id="install-app" aria-expanded="false" aria-controls="install-help" hidden>앱 설치</button>
+        <button type="button" class="icon-button" id="open-search" aria-label="전체 종목 검색"><svg class="icon"><use href="#i-search"/></svg></button>
+      </div>
+    </div>
     <p id="install-help" hidden>갤럭시에서는 Chrome 오른쪽 위 ⋮ 메뉴에서 ‘설치 및 바로가기 만들기’ 또는 ‘홈 화면에 추가’를 누른 뒤 ‘설치’를 선택하세요. 채팅 안에서 열렸다면 메뉴에서 ‘Chrome으로 열기’ 또는 ‘브라우저로 열기’를 먼저 선택하세요.</p>
   </header>
-  <main>
-    <input id="search" type="search" aria-label="종목 검색" placeholder="종목명 또는 종목코드 검색">
-    <select id="sort" aria-label="종목 정렬">
-      <option value="deadline">매수 마감 가까운 순</option>
-      <option value="name">종목명순</option>
-      <option value="upside">목표주가 상승여력순</option>
-    </select>
-    <p id="updated" role="status">배당자료를 불러오는 중입니다.</p>
-    <div id="stocks" class="stocks"></div>
-    <button type="button" id="more" hidden>종목 더 보기</button>
+  <main id="main" class="layout">
+    <aside id="overview" aria-label="가장 가까운 매수 마감" hidden></aside>
+    <section class="panel" aria-labelledby="view-title">
+      <div class="panel-heading"><h2 id="view-title">배당 일정</h2><span class="count" id="count"></span></div>
+      <div id="schedule-filter" class="segment" aria-label="일정 구분">
+        <button type="button" data-period="upcoming" aria-pressed="true">다가오는 일정</button>
+        <button type="button" data-period="past" aria-pressed="false">지난 일정</button>
+      </div>
+      <div id="list-tools" hidden>
+        <label class="search-field"><svg class="icon"><use href="#i-search"/></svg><input id="search" type="search" aria-label="종목 검색" placeholder="종목명 또는 코드 검색" autocomplete="off"></label>
+        <label class="sort-field">정렬 <select id="sort" aria-label="종목 정렬">
+          <option value="deadline">매수 마감 가까운 순</option>
+          <option value="name">종목명순</option>
+          <option value="upside">목표주가 상승여력순</option>
+        </select></label>
+      </div>
+      <div id="stocks" class="stocks"></div>
+      <button type="button" id="more" class="more" hidden>종목 더 보기</button>
+      <p id="updated" class="updated" role="status">배당자료를 불러오는 중입니다.</p>
+    </section>
+    <p id="feedback" role="status" class="sr-only"></p>
   </main>
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
   <script src="install.js"></script>
 </body>
 </html>

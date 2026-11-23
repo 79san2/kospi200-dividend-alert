@@ -8,6 +8,19 @@ const more = document.getElementById("more");
 const pageSize = 15;
 let limit = pageSize;
 let stocks = [];
+let receivedData = false;
+let period = "upcoming";
+let currentView = "schedule";
+const dayMs = 86400000;
+const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
+const bookmarkKey = "kospi200-dividend-alert.favorites";
+const overview = document.getElementById("overview");
+const viewTitles = {schedule: "매수 마감 일정", all: "전체 종목", saved: "관심 종목"};
+let favorites = new Set();
+try {
+  const saved = JSON.parse(localStorage.getItem(bookmarkKey));
+  if (Array.isArray(saved)) favorites = new Set(saved.filter(value => typeof value === "string"));
+} catch { /* Browsers with storage disabled can still use favorites for the session. */ }
 
 function visibleEvent(stock) {
   if (stock.pendingNotice) {
@@ -90,43 +103,166 @@ function stockCard(stock) {
   const previous = [["배당금", stock.dividend], ["마지막 매수일", stock.lastBuyDate],
     ["배당락일", stock.exDate], ["배당기준일", stock.recordDate]]
     .filter(([, value]) => value != null);
-  return `<article class="stock">
-    <h2>${escapeHTML(stock.name)} <small>${escapeHTML(stock.code)}</small></h2>
+  const history = stock.annual?.history || [];
+  const annual = history[0];
+  const useAnnual = !event && annual;
+  const amount = useAnnual ? annual.amount : event?.amount;
+  const label = useAnnual ? annual.year + "년 연간" : event?.period || "";
+  const saved = favorites.has(stock.code);
+  const name = escapeHTML(stock.name);
+  const code = escapeHTML(stock.code);
+  return `<article class="stock" data-code="${code}">
+    <button type="button" class="bookmark" aria-label="${name} 관심 종목" aria-pressed="${saved}">
+      <svg class="icon" aria-hidden="true"><use href="#i-bookmark"/></svg></button>
+    <details><summary>
+      <span class="identity"><strong>${name}</strong><small>${code}</small></span>
+      <span class="quote"><strong>${amount == null ? "확인 대기" : won.format(amount) + '<small>원</small>'}</strong>
+        <small>${escapeHTML(label || (event?.unavailable ? "공시 확인 중" : "주당 배당금"))}</small></span>
+      <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+    </summary><div class="detail">
     ${event ? quarterSection(event) : '<p class="caption">확인된 배당 일정 없음</p>'}
-    ${stock.annual?.history?.length ? annualSection(stock.annual) :
+    ${history.length ? annualSection(stock.annual) :
       (stock.annual ? '<p class="sources">' + escapeHTML(stock.annual.reportYear) + '년 보통주 주당배당금 확인 대기 · ' + sourceLink(stock.annual.source, "연간 공시") + '</p>' : "")}
     ${!event && previous.length ? "<dl>" + previous.map(pair => line(...pair)).join("") + "</dl>" : ""}
     ${market.length ? "<section><h3>주가 정보</h3><dl>" + market.map(pair => line(...pair)).join("") + "</dl></section>" : ""}
-  </article>`;
+    </div></details></article>`;
+}
+
+function shortDate(iso) {
+  const day = new Date(iso + "T00:00:00Z");
+  return `${day.getUTCMonth() + 1}월 ${day.getUTCDate()}일 (${weekdays[day.getUTCDay()]})`;
+}
+
+function renderOverview(upcoming, today) {
+  const next = upcoming[0]?.day;
+  overview.hidden = currentView !== "schedule" || !receivedData;
+  if (overview.hidden) return;
+  if (!next) {
+    overview.innerHTML = '<div class="hero"><p class="hero-label">가장 가까운 매수 마감</p><h2 class="no-date">예정된 일정이 없습니다</h2><p class="hero-info">배당 결정 공시를 확인하면 날짜가 표시됩니다.</p></div>';
+    return;
+  }
+  const day = new Date(next + "T00:00:00Z");
+  const diff = Math.round((day.getTime() - Date.parse(today + "T00:00:00Z")) / dayMs);
+  const monday = day.getTime() - ((day.getUTCDay() + 6) % 7) * dayMs;
+  const scheduledDays = new Set(upcoming.map(item => item.day));
+  const week = Array.from({length: 7}, (_, i) => {
+    const date = new Date(monday + i * dayMs);
+    const iso = date.toISOString().slice(0, 10);
+    return `<li class="${iso === next ? "selected" : ""}" aria-label="${shortDate(iso)}${scheduledDays.has(iso) ? " 매수 마감" : ""}">
+      <span>${weekdays[date.getUTCDay()]}</span><b>${date.getUTCDate()}</b><i class="${scheduledDays.has(iso) ? "dot" : ""}"></i></li>`;
+  }).join("");
+  overview.innerHTML = `<div class="hero"><div class="hero-top"><p class="hero-label">가장 가까운 매수 마감</p>
+    <span class="dday">${diff ? "D−" + diff : "D-DAY"}</span></div>
+    <h2>${day.getUTCMonth() + 1}월 ${day.getUTCDate()}일</h2>
+    <p class="hero-info">${weekdays[day.getUTCDay()]}요일 · ${upcoming.filter(item => item.day === next).length}개 종목 매수 마감</p>
+    <ul class="week" aria-label="매수 마감 주간">${week}</ul></div>`;
 }
 
 function render() {
   const keyword = search.value.trim().toLowerCase();
   const today = koreaDate.format(new Date());
-  const list = stocks.filter(stock =>
-    stock.name.toLowerCase().includes(keyword) || stock.code.toLowerCase().includes(keyword));
-  if (sort.value === "deadline") {
-    const deadline = item => {
-      const day = visibleEvent(item)?.lastBuyDate;
-      return day && day >= today ? day : null;
-    };
-    list.sort((a, b) => {
-      const first = deadline(a), second = deadline(b);
-      if (first || second) return (first || "9999").localeCompare(second || "9999");
-      const aDate = visibleEvent(a)?.recordDate || "";
-      const bDate = visibleEvent(b)?.recordDate || "";
-      return bDate.localeCompare(aDate) || a.name.localeCompare(b.name, "ko");
-    });
-  } else if (sort.value === "upside") {
-    list.sort((a, b) => (b.upside ?? -Infinity) - (a.upside ?? -Infinity));
+  const byDate = stocks.map(stock => ({stock, day: visibleEvent(stock)?.lastBuyDate})).filter(item => item.day)
+    .sort((a, b) => a.day.localeCompare(b.day) || a.stock.name.localeCompare(b.stock.name, "ko"));
+  const upcoming = byDate.filter(item => item.day >= today);
+  renderOverview(upcoming, today);
+  const schedule = currentView === "schedule";
+  document.getElementById("main").classList.toggle("schedule-layout", schedule);
+  document.getElementById("view-title").textContent = viewTitles[currentView];
+  document.getElementById("schedule-filter").hidden = !schedule;
+  document.getElementById("list-tools").hidden = schedule;
+  let list;
+  if (schedule) {
+    const dated = period === "upcoming" ? upcoming : byDate.filter(item => item.day < today).sort((a,b) => b.day.localeCompare(a.day));
+    list = dated.map(item => item.stock);
   } else {
-    list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
+    list = stocks.filter(stock => (currentView !== "saved" || favorites.has(stock.code)) &&
+      (stock.name.toLowerCase().includes(keyword) || stock.code.toLowerCase().includes(keyword)));
+    list.sort((a,b) => {
+      if (sort.value === "deadline") {
+        const da = visibleEvent(a)?.lastBuyDate || "", db = visibleEvent(b)?.lastBuyDate || "";
+        const order = (da >= today ? da : "9999").localeCompare(db >= today ? db : "9999") || db.localeCompare(da);
+        if (order) return order;
+      } else if (sort.value === "upside") {
+        const order = (b.upside ?? -Infinity) - (a.upside ?? -Infinity);
+        if (order) return order;
+      }
+      return a.name.localeCompare(b.name, "ko");
+    });
   }
+  document.getElementById("count").textContent = receivedData ? list.length + "종목" : "";
   more.hidden = list.length <= limit;
-  more.textContent = `종목 더 보기 (${Math.min(limit, list.length)}/${list.length})`;
-  container.innerHTML = list.length ? list.slice(0, limit).map(stockCard).join("") :
-    `<p class="stock">${keyword ? "검색 결과가 없습니다." : "표시할 종목이 없습니다."}</p>`;
+  more.textContent = `종목 더 보기 (${Math.min(list.length, limit)}/${list.length})`;
+  const opened = new Set([...container.querySelectorAll("details[open]")].map(el => el.closest(".stock").dataset.code));
+  let lastDay = "";
+  const rows = list.slice(0,limit).map(stock => {
+    const day = visibleEvent(stock)?.lastBuyDate;
+    const heading = schedule && day !== lastDay ? `<h3 class="date-heading"><span>${shortDate(day)}</span><small>1주당 배당금</small></h3>` : "";
+    lastDay = day;
+    return heading + stockCard(stock);
+  }).join("");
+  const empty = keyword && !schedule ? "검색 결과가 없습니다." : currentView === "saved" ? "종목 옆 북마크를 누르면 여기에 모입니다." :
+    schedule ? (period === "upcoming" ? "새 매수 마감 일정을 기다리고 있습니다." : "확인된 지난 일정이 없습니다.") : "표시할 종목이 없습니다.";
+  container.innerHTML = rows || (receivedData ? '<p class="empty">' + empty + '</p>' : "");
+  for (const card of container.querySelectorAll(".stock")) {
+    if (opened.has(card.dataset.code) || (!schedule && keyword && list.length === 1)) card.querySelector("details").open = true;
+  }
 }
+
+function selectView() {
+  const hash = location.hash.slice(1);
+  currentView = Object.hasOwn(viewTitles, hash) ? hash : "schedule";
+  for (const button of document.querySelectorAll("[data-view]")) {
+    if (button.dataset.view === currentView) button.setAttribute("aria-current", "page");
+    else button.removeAttribute("aria-current");
+  }
+  search.value = "";
+  limit = pageSize;
+  container.replaceChildren();
+  render();
+  window.scrollTo(0,0);
+}
+
+function navigate(view) {
+  if (currentView === view) return;
+  history.pushState(null, "", "#" + view);
+  selectView();
+}
+
+for (const button of document.querySelectorAll("[data-view]")) {
+  button.addEventListener("click", () => navigate(button.dataset.view));
+}
+window.addEventListener("hashchange", selectView);
+document.getElementById("open-search").addEventListener("click", () => {
+  navigate("all");
+  search.focus();
+});
+for (const button of document.querySelectorAll("[data-period]")) {
+  button.addEventListener("click", () => {
+    period = button.dataset.period;
+    for (const control of document.querySelectorAll("[data-period]")) {
+      control.setAttribute("aria-pressed", String(control.dataset.period === period));
+    }
+    resetList();
+  });
+}
+container.addEventListener("click", event => {
+  const button = event.target.closest(".bookmark");
+  if (!button) return;
+  const card = button.closest(".stock");
+  const code = card.dataset.code;
+  const save = !favorites.has(code);
+  if (save) favorites.add(code);
+  else favorites.delete(code);
+  let message = save ? "관심 종목에 추가했습니다." : "관심 종목에서 삭제했습니다.";
+  try { localStorage.setItem(bookmarkKey, JSON.stringify([...favorites])); }
+  catch { message += " 현재 브라우저에서는 앱을 닫을 때까지 유지됩니다."; }
+  document.getElementById("feedback").textContent = message;
+  button.setAttribute("aria-pressed", String(save));
+  if (currentView === "saved" && !save) {
+    render();
+    (container.querySelector(".bookmark") || search).focus();
+  }
+});
 
 async function readData(url) {
   const controller = new AbortController();
@@ -157,6 +293,7 @@ async function loadStocks() {
     latest = stamp;
     shown = index;
     stocks = data.stocks;
+    receivedData = true;
     updated.textContent = `구성종목 ${stocks.length}개 · 구성 기준 ${data.membershipDate || data.updated || "미확인"} · 배당자료 확인 ${data.updated || "미확인"}`;
     render();
   }));
@@ -173,4 +310,5 @@ more.addEventListener("click", () => {
   limit += pageSize;
   render();
 });
+selectView();
 loadStocks();
