@@ -63,6 +63,24 @@ def number(value):
     return None
 
 
+def annual_history(rows, year):
+    classes = [re.sub(r"\s+", "", row.get("stock_knd") or "") for row in rows]
+    common = [row for row, label in zip(rows, classes)
+              if label in ("보통주", "보통주식", "기명식보통주", "기명식보통주식", "의결권있는주식")]
+    fields = ("thstrm", "frmtrm", "lwfr")
+    if rows and not common and all(label in ("", "-") for label in classes):
+        # Some single-class issuers leave both class labels blank and the second row empty.
+        if all(all(number(row.get(field)) is None for field in fields) for row in rows[1:]):
+            common = rows[:1]
+    history = []
+    if len(common) == 1:
+        for offset, field in enumerate(fields):
+            amount = number(common[0].get(field))
+            if amount is not None:
+                history.append({"year": year-offset, "amount": amount})
+    return history
+
+
 def annual_data(key, corp, today):
     for year in (today.year - 1, today.year - 2):
         resp = dart_json("alotMatter.json", key, corp_code=corp, bsns_year=year, reprt_code="11011")
@@ -70,16 +88,8 @@ def annual_data(key, corp, today):
             continue
         rows = [r for r in resp.get("list", [])
                 if "".join(r["se"].split()).replace("ㆍ", "") == "주당현금배당금(원)"]
-        common = [r for r in rows if re.sub(r"\s+", "", r.get("stock_knd") or "") in ("보통주", "보통주식", "기명식보통주")]
-        if not common and len(rows) == 1 and (rows[0].get("stock_knd") or "").strip() in ("", "-"):
-            common = rows
         receipt = resp["list"][0]["rcept_no"]
-        history = []
-        if len(common) == 1:
-            for offset, field in enumerate(("thstrm", "frmtrm", "lwfr")):
-                amount = number(common[0].get(field))
-                if amount is not None:
-                    history.append({"year": year-offset, "amount": amount})
+        history = annual_history(rows, year)
         return {"history": history, "reportYear": year, "source": RECEIPT + receipt, "checkedOn": today.isoformat()}
     return None
 
@@ -94,9 +104,9 @@ def cash_notices(key, tickers, start, end):
         for row in res.get("list", []):
             title = re.sub(r"[\s·ㆍ・]", "", row["report_nm"])
             code = row.get("stock_code")
-            if code in tickers and "현금현물배당결정" in title:
-                if code not in results or row["rcept_no"] > results[code]["rcept_no"]:
-                    results[code] = row
+            if (code in tickers and "현금현물배당결정" in title
+                    and not any(term in title for term in ("자회사", "종속회사", "주요경영사항", "타법인"))):
+                results.setdefault(code, []).append(row)
         if page >= int(res.get("total_page", 0)):
             return results
         page += 1
@@ -129,6 +139,10 @@ def decision_data(row, today, calendar):
     except UnicodeDecodeError:
         body = raw.decode("cp949")
     tree = html.fromstring(body)
+    header = "".join(tree.xpath("//body")[0].itertext())
+    header = re.sub(r"\s+", "", header).partition("배당구분")[0]
+    if any(term in header for term in ("자회사", "종속회사", "주요경영사항", "타법인")):
+        return None
     for tr in tree.xpath("//tr"):
         cells = [" ".join(" ".join(cell.itertext()).split()) for cell in tr.xpath("./th|./td")]
         if len(cells) < 2:

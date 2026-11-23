@@ -17,6 +17,9 @@ function visibleEvent(stock) {
   const ir = stock.quarter;
   if (!reported) return ir;
   if (ir && reported.recordDate && ir.recordDate > reported.recordDate) return ir;
+  if (ir && ir.recordDate && ir.recordDate === reported.recordDate && !reported.paymentDate && ir.paymentDate) {
+    return {...reported, paymentDate: ir.paymentDate, paymentSource: ir.source};
+  }
   return reported;
 }
 
@@ -59,6 +62,7 @@ function quarterSection(q) {
     <p class="sources">${q.publishedOn ? "공시 " + escapeHTML(q.publishedOn) : "분기 배당 확인 " + escapeHTML(q.checkedOn)} ·
       ${sourceLink(q.source, q.receipt ? "배당결정 공시" : "삼성전자 IR")}
       ${q.decisionSource ? " · " + sourceLink(q.decisionSource, "배당결정 공시") : ""}
+      ${q.paymentSource ? " · " + sourceLink(q.paymentSource, "지급일 확인 · 삼성전자 IR") : ""}
       ${q.tradingSource ? " · " + sourceLink(q.tradingSource, q.receipt ? "매수·배당락일 계산 근거" : "매수일 근거") : ""}</p></section>`;
 }
 
@@ -148,7 +152,7 @@ async function loadStocks() {
   let shown = -1;
   await Promise.allSettled(urls.map(async (url, index) => {
     const data = await readData(url);
-    const stamp = /^\d{4}-\d{2}-\d{2}$/.test(data.updated) ? data.updated : "";
+    const stamp = data.updatedAt || (/^\d{4}-\d{2}-\d{2}$/.test(data.updated) ? data.updated : "");
     if (latest !== null && (stamp < latest || (stamp === latest && index < shown))) return;
     latest = stamp;
     shown = index;

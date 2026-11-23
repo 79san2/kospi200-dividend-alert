@@ -127,15 +127,23 @@ def main():
                 checked = True
             except Exception as err:
                 print(f"::warning::{code} 연간 공시 갱신 지연 ({type(err).__name__})")
-        row = notices.get(code) or stock.get("pendingNotice")
-        if row and row["rcept_no"] >= stock.get("decision", {}).get("receipt", ""):
-            if row["rcept_no"] != stock.get("decision", {}).get("receipt") or stock.get("pendingNotice"):
-                try:
-                    stock["decision"] = decision_data(row, today, calendar)
-                    stock.pop("pendingNotice", None)
-                except Exception as err:
-                    print(f"::warning::{code} 결정 공시 본문 확인 대기 ({type(err).__name__})")
-                    stock["pendingNotice"] = {k: row.get(k, "") for k in ("rcept_no","rcept_dt","report_nm","rm")}
+        candidates = {row["rcept_no"]: row for row in notices.get(code, [])}
+        pending = stock.pop("pendingNotice", None)
+        if pending:
+            candidates.setdefault(pending["rcept_no"], pending)
+        for receipt in sorted(candidates, reverse=True):
+            if receipt <= stock.get("decision", {}).get("receipt", ""):
+                break
+            row = candidates[receipt]
+            try:
+                event = decision_data(row, today, calendar)
+            except Exception as err:
+                print(f"::warning::{code} 결정 공시 본문 확인 대기 ({type(err).__name__})")
+                stock["pendingNotice"] = {k: row.get(k, "") for k in ("rcept_no", "rcept_dt", "report_nm", "rm")}
+                break
+            if event is not None:
+                stock["decision"] = event
+                break
         return checked
 
     with ThreadPoolExecutor(max_workers=4) as executor:
@@ -144,7 +152,8 @@ def main():
         sys.exit("배당자료 수집 실패 · 기존 자료 유지")
     if notices_ok:
         data["noticesThrough"] = today.isoformat()
-    data.update(updated=today.isoformat(), membershipDate=roster["updated"], stocks=list(stocks.values()))
+    data.update(updated=today.isoformat(), updatedAt=datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds"),
+                membershipDate=roster["updated"], stocks=list(stocks.values()))
     save(ROSTER, roster)
     save(DATA, data)
     annual_count = sum(bool(s.get("annual", {}).get("history")) for s in stocks.values())
