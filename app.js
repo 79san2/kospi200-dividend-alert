@@ -4,7 +4,21 @@ const container = document.getElementById("stocks");
 const updated = document.getElementById("updated");
 const won = new Intl.NumberFormat("ko-KR");
 const koreaDate = new Intl.DateTimeFormat("sv-SE", {timeZone: "Asia/Seoul"});
+const more = document.getElementById("more");
+const pageSize = 15;
+let limit = pageSize;
 let stocks = [];
+
+function visibleEvent(stock) {
+  if (stock.pendingNotice) {
+    return {unavailable: "새 공시 확인 중", source: "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=" + stock.pendingNotice.rcept_no};
+  }
+  const reported = stock.decision;
+  const ir = stock.quarter;
+  if (!reported) return ir;
+  if (ir && reported.recordDate && ir.recordDate > reported.recordDate) return ir;
+  return reported;
+}
 
 function escapeHTML(value) {
   return String(value ?? "").replace(/[&<>"']/g, char => ({
@@ -22,27 +36,30 @@ function line(label, value) {
 }
 
 function quarterSection(q) {
+  if (q.unavailable) return `<p class="caption">${escapeHTML(q.unavailable)} · ${sourceLink(q.source, "공시 원문")}</p>`;
   const today = koreaDate.format(new Date());
   let status = "";
   if (q.lastBuyDate) {
     if (today > q.lastBuyDate) status = "매수 기한 지남";
     else if (today === q.lastBuyDate) status = "오늘이 마지막 매수일";
-  } else if (today > q.recordDate) {
+    else status = "매수 기한 전";
+  } else if (q.recordDate && today > q.recordDate) {
     status = "기준일 지남";
   }
-  return `<section><h3>${escapeHTML(q.period)} 배당</h3>
-    <p class="amount">${won.format(q.amount)}원 <small>/ 1주</small></p>
+  return `<section><h3>${escapeHTML(q.period)}${q.period?.endsWith("배당") ? "" : " 배당"}</h3>
+    <p class="amount">${q.amount == null ? "금액 확인 대기" : won.format(q.amount) + "원 <small>/ 1주</small>"}</p>
     ${status ? `<p class="status">${status}</p>` : ""}
     <dl>
       ${line("마지막 매수·보유일", q.lastBuyDate || "확인 대기")}
       ${line("배당락일 · 매도 가능", q.exDate || "확인 대기")}
-      ${line("배당기준일", q.recordDate)}
+      ${line("배당기준일", q.recordDate || "공시 확인 대기")}
       ${line("지급예정일", q.paymentDate || "확인 대기")}
     </dl>
-    <p class="sources">분기 배당 확인 ${escapeHTML(q.checkedOn)} ·
-      ${sourceLink(q.source, "삼성전자 IR")}
+    ${q.differential ? '<p class="caption">차등배당 적용 · 대상별 금액은 공시 원문을 확인하세요.</p>' : ""}
+    <p class="sources">${q.publishedOn ? "공시 " + escapeHTML(q.publishedOn) : "분기 배당 확인 " + escapeHTML(q.checkedOn)} ·
+      ${sourceLink(q.source, q.receipt ? "배당결정 공시" : "삼성전자 IR")}
       ${q.decisionSource ? " · " + sourceLink(q.decisionSource, "배당결정 공시") : ""}
-      ${q.tradingSource ? " · " + sourceLink(q.tradingSource, "매수일 근거") : ""}</p></section>`;
+      ${q.tradingSource ? " · " + sourceLink(q.tradingSource, q.receipt ? "매수·배당락일 계산 근거" : "매수일 근거") : ""}</p></section>`;
 }
 
 function annualSection(annual) {
@@ -60,6 +77,7 @@ function annualSection(annual) {
 }
 
 function stockCard(stock) {
+  const event = visibleEvent(stock);
   const market = [
     ["최근 종가", stock.price], ["등락률", stock.changeRate],
     ["평균 목표주가", stock.targetPrice],
@@ -70,23 +88,39 @@ function stockCard(stock) {
     .filter(([, value]) => value != null);
   return `<article class="stock">
     <h2>${escapeHTML(stock.name)} <small>${escapeHTML(stock.code)}</small></h2>
-    ${stock.quarter ? quarterSection(stock.quarter) : ""}
-    ${stock.annual?.history?.length ? annualSection(stock.annual) : ""}
-    ${!stock.quarter && previous.length ? "<dl>" + previous.map(pair => line(...pair)).join("") + "</dl>" : ""}
+    ${event ? quarterSection(event) : '<p class="caption">확인된 배당 일정 없음</p>'}
+    ${stock.annual?.history?.length ? annualSection(stock.annual) :
+      (stock.annual ? '<p class="sources">' + escapeHTML(stock.annual.reportYear) + '년 보통주 주당배당금 확인 대기 · ' + sourceLink(stock.annual.source, "연간 공시") + '</p>' : "")}
+    ${!event && previous.length ? "<dl>" + previous.map(pair => line(...pair)).join("") + "</dl>" : ""}
     ${market.length ? "<section><h3>주가 정보</h3><dl>" + market.map(pair => line(...pair)).join("") + "</dl></section>" : ""}
   </article>`;
 }
 
 function render() {
   const keyword = search.value.trim().toLowerCase();
+  const today = koreaDate.format(new Date());
   const list = stocks.filter(stock =>
-    stock.name.toLowerCase().includes(keyword) || stock.code.includes(keyword));
-  if (sort.value === "upside") {
+    stock.name.toLowerCase().includes(keyword) || stock.code.toLowerCase().includes(keyword));
+  if (sort.value === "deadline") {
+    const deadline = item => {
+      const day = visibleEvent(item)?.lastBuyDate;
+      return day && day >= today ? day : null;
+    };
+    list.sort((a, b) => {
+      const first = deadline(a), second = deadline(b);
+      if (first || second) return (first || "9999").localeCompare(second || "9999");
+      const aDate = visibleEvent(a)?.recordDate || "";
+      const bDate = visibleEvent(b)?.recordDate || "";
+      return bDate.localeCompare(aDate) || a.name.localeCompare(b.name, "ko");
+    });
+  } else if (sort.value === "upside") {
     list.sort((a, b) => (b.upside ?? -Infinity) - (a.upside ?? -Infinity));
   } else {
     list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
   }
-  container.innerHTML = list.length ? list.map(stockCard).join("") :
+  more.hidden = list.length <= limit;
+  more.textContent = `종목 더 보기 (${Math.min(limit, list.length)}/${list.length})`;
+  container.innerHTML = list.length ? list.slice(0, limit).map(stockCard).join("") :
     `<p class="stock">${keyword ? "검색 결과가 없습니다." : "표시할 종목이 없습니다."}</p>`;
 }
 
@@ -119,12 +153,20 @@ async function loadStocks() {
     latest = stamp;
     shown = index;
     stocks = data.stocks;
-    updated.textContent = `등록 종목 ${stocks.length}개 · 자료 확인 ${data.updated || "미확인"}`;
+    updated.textContent = `구성종목 ${stocks.length}개 · 구성 기준 ${data.membershipDate || data.updated || "미확인"} · 배당자료 확인 ${data.updated || "미확인"}`;
     render();
   }));
   if (latest === null) updated.textContent = "배당자료를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.";
 }
 
-search.addEventListener("input", render);
-sort.addEventListener("change", render);
+function resetList() {
+  limit = pageSize;
+  render();
+}
+search.addEventListener("input", resetList);
+sort.addEventListener("change", resetList);
+more.addEventListener("click", () => {
+  limit += pageSize;
+  render();
+});
 loadStocks();

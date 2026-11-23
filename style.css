@@ -81,3 +81,5 @@ input, select {
 .history strong { text-align: right; }
 .track { background: #eaf0eb; height: 7px; border-radius: 5px; overflow: hidden; }
 .track i { display: block; background: #46866a; height: 100%; }
+
+#more { width: 100%; margin-top: 14px; padding: 12px; border: 1px solid #b7c8bf; border-radius: 10px; background: #fff; color: #17513d; font: inherit; cursor: pointer; }

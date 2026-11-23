@@ -14,11 +14,13 @@
   <main>
     <input id="search" type="search" aria-label="종목 검색" placeholder="종목명 또는 종목코드 검색">
     <select id="sort" aria-label="종목 정렬">
+      <option value="deadline">매수 마감 가까운 순</option>
       <option value="name">종목명순</option>
       <option value="upside">목표주가 상승여력순</option>
     </select>
     <p id="updated" role="status">배당자료를 불러오는 중입니다.</p>
     <div id="stocks" class="stocks"></div>
+    <button type="button" id="more" hidden>종목 더 보기</button>
   </main>
   <script src="app.js"></script>
 </body>

@@ -1,53 +1,22 @@
 import json
 import os
-import re
 import sys
-from datetime import date, datetime
+from concurrent.futures import ThreadPoolExecutor
+from datetime import date, datetime, timedelta
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
+import re
+
+import exchange_calendars
+
+from market_data import (MASTER, RECEIPT, annual_data, cash_notices, corp_codes, decision_data,
+                         read_members, read_url)
 
 DATA = Path(__file__).resolve().parents[1] / "data/stocks.json"
+ROSTER = DATA.with_name("kospi200.json")
 IR_URL = "https://www.samsung.com/sec/ir/stock-information/shareholder-return/"
-DART_URL = "https://opendart.fss.or.kr/api/alotMatter.json"
-CODE = "005930"
-
-
-def get_annual(key, today):
-    if not key:
-        raise ValueError("OpenDART 인증키 미설정")
-    for year in (today.year - 1, today.year - 2):
-        params = urlencode({"crtfc_key": key, "corp_code": "00126380",
-                            "bsns_year": year, "reprt_code": "11011"})
-        with urlopen(DART_URL + "?" + params, timeout=25) as response:
-            report = json.load(response)
-        if report.get("status") == "013":
-            continue
-        if report.get("status") != "000":
-            raise ValueError("OpenDART 응답 코드 " + str(report.get("status")))
-        rows = [row for row in report["list"]
-                if "".join(row["se"].split()) == "주당현금배당금(원)"
-                and row["stock_knd"].strip() in ("보통주", "보통주식")]
-        if len(rows) != 1:
-            raise ValueError("삼성전자 보통주 주당 현금배당금 행 확인 필요")
-        row = rows[0]
-        receipt = row["rcept_no"]
-        if not re.fullmatch(r"[0-9]{14}", receipt):
-            raise ValueError("사업보고서 접수번호 확인 필요")
-        history = []
-        for offset, column in enumerate(("thstrm", "frmtrm", "lwfr")):
-            amount = str(row.get(column, "")).replace(",", "").strip()
-            if amount in ("-", "", "None") and offset:
-                continue
-            if not re.fullmatch(r"[0-9]+", amount):
-                raise ValueError("연간 배당금 확인 필요")
-            history.append({"year": year - offset, "amount": int(amount)})
-        return {"history": history, "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=" + receipt,
-                "checkedOn": today.isoformat()}
-    raise ValueError("최근 두 사업연도의 연간 공시를 찾지 못함")
-
 
 class VisibleText(HTMLParser):
     def __init__(self):
@@ -87,41 +56,100 @@ def get_quarter(today):
             "source": IR_URL, "checkedOn": today.isoformat()}
 
 
-def main():
-    today = datetime.now(ZoneInfo("Asia/Seoul")).date()
-    data = json.loads(DATA.read_text(encoding="utf-8"))
-    stock = next((item for item in data["stocks"] if item["code"] == CODE), None)
-    if stock is None:
-        stock = {"name": "삼성전자", "code": CODE}
-        data["stocks"].append(stock)
+def save(path, value):
+    temp = path.with_suffix(".tmp")
+    temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temp.replace(path)
 
-    failures = 0
-    for field, fetch in (("annual", lambda: get_annual(os.getenv("OPENDART_API_KEY"), today)),
-                         ("quarter", lambda: get_quarter(today))):
-        try:
-            fresh = fetch()
-            previous = stock.get(field, {})
-            if field == "quarter":
-                if fresh["recordDate"] < previous.get("recordDate", ""):
-                    raise ValueError("기존 공시보다 오래된 분기 자료")
-                if fresh["recordDate"] == previous.get("recordDate"):
-                    fresh = {**previous, **fresh}
-            elif previous and fresh["history"][0]["year"] < previous["history"][0]["year"]:
-                raise ValueError("기존 공시보다 오래된 연간 자료")
-            stock[field] = fresh
-            print(f"{field}: {fresh.get('period') or fresh['history'][0]['year']} "
-                  f"{fresh['amount'] if field == 'quarter' else fresh['history'][0]['amount']}원")
-        except (OSError, ValueError, KeyError, TypeError) as error:
-            # Network errors can contain a request URL with the DART credential.
-            reason = str(error) if type(error) is ValueError else type(error).__name__
-            print(f"::warning::{field} 갱신 실패, 이전 자료 유지 ({reason})")
-            failures += 1
-    if failures == 2:
-        sys.exit("두 출처 모두 갱신하지 못했습니다.")
-    data["updated"] = today.isoformat()
-    temp = DATA.with_suffix(".tmp")
-    temp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    temp.replace(DATA)
+
+def refresh_members():
+    saved = json.loads(ROSTER.read_text())
+    try:
+        current = read_members(read_url(MASTER))
+        if current["updated"] < saved["updated"]:
+            return saved
+        return current
+    except Exception as err:
+        if not saved["stocks"]:
+            raise
+        print(f"::warning::이전 구성종목 목록 유지 ({type(err).__name__})")
+        return saved
+
+
+def main():
+    key = os.environ.get("OPENDART_API_KEY")
+    if not key:
+        sys.exit("OpenDART 인증키 미설정")
+    today = datetime.now(ZoneInfo("Asia/Seoul")).date()
+    data = json.loads(DATA.read_text())
+    roster = refresh_members()
+    old = {s["code"]: s for s in data["stocks"]}
+    stocks = {r["code"]: {**old.get(r["code"], {}), **r} for r in roster["stocks"]}
+    try:
+        mapping = corp_codes(key)
+    except Exception as err:
+        print(f"::warning::저장된 기업 고유번호 사용 ({type(err).__name__})")
+        mapping = {}
+    for code, stock in stocks.items():
+        if code in mapping:
+            stock["corpCode"] = mapping[code]
+
+    first = today - timedelta(days=85)
+    checkpoint = data.get("noticesThrough")
+    start = max(first, date.fromisoformat(checkpoint) - timedelta(days=5)) if checkpoint else first
+    notices_ok = False
+    try:
+        notices = cash_notices(key, stocks, start, today)
+        notices_ok = True
+    except Exception as err:
+        print(f"::warning::배당결정 목록 수집 지연 ({type(err).__name__})")
+        notices = {}
+    calendar = exchange_calendars.get_calendar("XKRX")
+    try:
+        stock = stocks.get("005930")
+        if stock is not None:
+            event = get_quarter(today)
+            prev = stock.get("quarter", {})
+            if event["recordDate"] >= prev.get("recordDate", ""):
+                stock["quarter"] = {**(prev if event["recordDate"] == prev.get("recordDate") else {}), **event}
+    except Exception as err:
+        print(f"::warning::삼성전자 IR 갱신 지연 ({type(err).__name__})")
+
+    def update(stock):
+        code = stock["code"]
+        checked = False
+        if stock.get("corpCode"):
+            try:
+                annual = annual_data(key, stock["corpCode"], today)
+                prior = stock.get("annual", {})
+                if annual and annual["reportYear"] >= prior.get("reportYear", 0):
+                    stock["annual"] = annual
+                checked = True
+            except Exception as err:
+                print(f"::warning::{code} 연간 공시 갱신 지연 ({type(err).__name__})")
+        row = notices.get(code) or stock.get("pendingNotice")
+        if row and row["rcept_no"] >= stock.get("decision", {}).get("receipt", ""):
+            if row["rcept_no"] != stock.get("decision", {}).get("receipt") or stock.get("pendingNotice"):
+                try:
+                    stock["decision"] = decision_data(row, today, calendar)
+                    stock.pop("pendingNotice", None)
+                except Exception as err:
+                    print(f"::warning::{code} 결정 공시 본문 확인 대기 ({type(err).__name__})")
+                    stock["pendingNotice"] = {k: row.get(k, "") for k in ("rcept_no","rcept_dt","report_nm","rm")}
+        return checked
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        checked_count = sum(executor.map(update, stocks.values()))
+    if not checked_count and not notices_ok:
+        sys.exit("배당자료 수집 실패 · 기존 자료 유지")
+    if notices_ok:
+        data["noticesThrough"] = today.isoformat()
+    data.update(updated=today.isoformat(), membershipDate=roster["updated"], stocks=list(stocks.values()))
+    save(ROSTER, roster)
+    save(DATA, data)
+    annual_count = sum(bool(s.get("annual", {}).get("history")) for s in stocks.values())
+    dates = sum(bool(s.get("decision", {}).get("recordDate") or s.get("quarter")) for s in stocks.values())
+    print(f"구성종목 {len(stocks)}개 · 연간 자료 조회 {checked_count}개 · 연간 금액 {annual_count}개 · 배당 일정 {dates}개")
 
 
 if __name__ == "__main__":
