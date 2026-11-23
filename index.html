@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>코스피200 배당 알리미</title>
+  <meta name="theme-color" content="#173b32">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/dividend-192.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>코스피200 배당 알리미</h1>
     <p>보통주 1주당 배당금과 매수·보유 일정을 확인하세요.</p>
+    <button type="button" id="install-app" aria-expanded="false" aria-controls="install-help" hidden>앱 설치</button>
+    <p id="install-help" hidden>갤럭시에서는 Chrome 오른쪽 위 ⋮ 메뉴에서 ‘설치 및 바로가기 만들기’ 또는 ‘홈 화면에 추가’를 누른 뒤 ‘설치’를 선택하세요. 채팅 안에서 열렸다면 메뉴에서 ‘Chrome으로 열기’ 또는 ‘브라우저로 열기’를 먼저 선택하세요.</p>
   </header>
   <main>
     <input id="search" type="search" aria-label="종목 검색" placeholder="종목명 또는 종목코드 검색">
@@ -23,5 +28,6 @@
     <button type="button" id="more" hidden>종목 더 보기</button>
   </main>
   <script src="app.js"></script>
+  <script src="install.js"></script>
 </body>
 </html>

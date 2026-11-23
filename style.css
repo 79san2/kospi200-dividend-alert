@@ -21,6 +21,22 @@ header p {
   margin: 0;
   color: #d8e7df;
 }
+#install-app {
+  margin-top: 14px;
+  padding: 9px 16px;
+  min-height: 44px;
+  border: 1px solid #adc9ba;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+#install-help {
+  max-width: 42em;
+  margin-top: 10px;
+  line-height: 1.6;
+}
 main {
   max-width: 760px;
   margin: auto;
