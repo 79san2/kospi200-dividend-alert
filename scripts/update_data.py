@@ -11,6 +11,8 @@ import re
 
 import exchange_calendars
 
+from stock_prices import refresh_prices
+
 from market_data import (MASTER, RECEIPT, annual_data, cash_notices, corp_codes, decision_data,
                          read_members, read_url)
 
@@ -76,15 +78,7 @@ def refresh_members():
         return saved
 
 
-def main():
-    key = os.environ.get("OPENDART_API_KEY")
-    if not key:
-        sys.exit("OpenDART 인증키 미설정")
-    today = datetime.now(ZoneInfo("Asia/Seoul")).date()
-    data = json.loads(DATA.read_text())
-    roster = refresh_members()
-    old = {s["code"]: s for s in data["stocks"]}
-    stocks = {r["code"]: {**old.get(r["code"], {}), **r} for r in roster["stocks"]}
+def refresh_dividends(key, today, stocks, data):
     try:
         mapping = corp_codes(key)
     except Exception as err:
@@ -149,16 +143,37 @@ def main():
     with ThreadPoolExecutor(max_workers=4) as executor:
         checked_count = sum(executor.map(update, stocks.values()))
     if not checked_count and not notices_ok:
-        sys.exit("배당자료 수집 실패 · 기존 자료 유지")
+        print("::warning::배당자료 수집 실패 · 기존 확인일 유지")
+        return False
     if notices_ok:
         data["noticesThrough"] = today.isoformat()
-    data.update(updated=today.isoformat(), updatedAt=datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds"),
-                membershipDate=roster["updated"], stocks=list(stocks.values()))
-    save(ROSTER, roster)
-    save(DATA, data)
+    data["updated"] = today.isoformat()
     annual_count = sum(bool(s.get("annual", {}).get("history")) for s in stocks.values())
     dates = sum(bool(s.get("decision", {}).get("recordDate") or s.get("quarter")) for s in stocks.values())
     print(f"구성종목 {len(stocks)}개 · 연간 자료 조회 {checked_count}개 · 연간 금액 {annual_count}개 · 배당 일정 {dates}개")
+
+    return True
+
+
+def main():
+    key = os.environ.get("OPENDART_API_KEY")
+    today = datetime.now(ZoneInfo("Asia/Seoul")).date()
+    data = json.loads(DATA.read_text())
+    roster = refresh_members()
+    old = {s["code"]: s for s in data["stocks"]}
+    stocks = {r["code"]: {**old.get(r["code"], {}), **r} for r in roster["stocks"]}
+    prices_ok = refresh_prices(stocks, today)
+    dividends_ok = False
+    if key:
+        dividends_ok = refresh_dividends(key, today, stocks, data)
+    else:
+        print("::warning::OpenDART 인증키 미설정 · 배당자료 이전 확인일 유지")
+    if not (prices_ok or dividends_ok):
+        sys.exit("자료 수집 실패 · 기존 자료 유지")
+    data.update(updatedAt=datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds"),
+                membershipDate=roster["updated"], stocks=list(stocks.values()))
+    save(ROSTER, roster)
+    save(DATA, data)
 
 
 if __name__ == "__main__":

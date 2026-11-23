@@ -23,6 +23,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000752",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 15830,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 24250,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -47,6 +55,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001236",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 76100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 116538,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -71,6 +87,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001417",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 67700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 102500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -108,6 +132,14 @@
         "exDate": "2026-11-23",
         "lastBuyDate": "2026-11-20",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 552000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 1602500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -128,6 +160,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000970",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 37000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 82000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -152,6 +192,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000997",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 18120,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 31000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -176,6 +224,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 86600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 157130,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -213,6 +269,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 1101000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 2973333,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -237,6 +301,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000753",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 24300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -261,6 +333,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001395",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 67300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 140182,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -285,6 +365,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 483500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 749467,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -309,6 +397,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 63700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 144400,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -333,6 +429,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260601001661",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 67700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 166667,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -357,6 +461,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 111500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 172500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -381,6 +493,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001503",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 32400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 53300,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -392,6 +512,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001418",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 16800,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 36500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -408,6 +536,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001448",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 31700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 55000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -432,6 +568,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260327000936",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 15880,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 35000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -456,6 +600,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000838",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 22700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 33000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -493,6 +645,14 @@
         "exDate": "2026-11-05",
         "lastBuyDate": "2026-11-04",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 176900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -517,6 +677,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001896",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 335000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 601333,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -541,6 +709,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000825",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 27050,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -578,6 +754,14 @@
         "exDate": "2026-10-29",
         "lastBuyDate": "2026-10-28",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 120000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -602,6 +786,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000062",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 99900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 190000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -626,6 +818,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001178",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 15570,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -650,6 +850,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001082",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 1193000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 1856429,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -674,6 +882,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001584",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 811000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -698,6 +914,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 30400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 39583,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -722,6 +946,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001025",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 84100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 130455,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -742,6 +974,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 153200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 227389,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -766,6 +1006,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002211",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 30050,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 57333,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -790,6 +1038,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001506",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 26650,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 42829,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -827,6 +1083,14 @@
         "exDate": "2026-11-27",
         "lastBuyDate": "2026-11-26",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 271000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 410941,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -851,6 +1115,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003892",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 334000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 549000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -875,6 +1147,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 21350,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 34000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -899,6 +1179,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004566",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 102500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 146250,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -936,6 +1224,14 @@
         "exDate": "2026-11-27",
         "lastBuyDate": "2026-11-26",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 248500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 515417,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -947,6 +1243,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260602000269",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 7360,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -984,6 +1288,14 @@
         "exDate": "2026-11-27",
         "lastBuyDate": "2026-11-26",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 244500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 468333,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1008,6 +1320,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 159300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 240500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1032,6 +1352,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000781",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 34250,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 72375,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1081,6 +1409,14 @@
         "exDate": "2026-09-29",
         "lastBuyDate": "2026-09-28",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 180600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 465714,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1105,6 +1441,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000771",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 21750,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 33033,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1142,6 +1486,14 @@
         "exDate": "2026-08-28",
         "lastBuyDate": "2026-08-27",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 30500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 54000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1166,6 +1518,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001427",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 164000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 370778,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1190,6 +1550,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001316",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 121200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 184545,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1210,6 +1578,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002954",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 401500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 782238,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1234,6 +1610,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260305001191",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 79200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 156000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1258,6 +1642,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002972",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 18310,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 38281,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1282,6 +1674,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004487",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 20850,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 33714,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1306,6 +1706,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000621",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 282500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -1330,6 +1738,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001285",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 36200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 69500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1354,6 +1770,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 72800,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 152778,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1378,6 +1802,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113001266",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 8490,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -1394,6 +1826,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 37050,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 57500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1418,6 +1858,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001158",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 49950,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -1442,6 +1890,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 797000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 2350000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1462,6 +1918,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001167",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 30200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 42500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1473,6 +1937,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001637",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 52000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 83750,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1493,6 +1965,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 214500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 447688,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1513,6 +1993,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261112000461",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 19000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 39167,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1550,6 +2038,14 @@
         "exDate": "2026-10-16",
         "lastBuyDate": "2026-10-15",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 152500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -1574,6 +2070,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 150600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 364000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1598,6 +2102,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 112000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 260500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1635,6 +2147,14 @@
         "exDate": "2026-11-18",
         "lastBuyDate": "2026-11-17",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 732000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 1346667,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1646,6 +2166,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 14530,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 28905,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1670,6 +2198,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 93400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 186083,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1694,6 +2230,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001270",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 261500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 746667,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1718,6 +2262,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 42950,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 77769,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1742,6 +2294,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 21250,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 26167,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1766,6 +2326,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 47700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 74308,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1790,6 +2358,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001268",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 89600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 147167,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1801,6 +2377,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260610000521",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 64000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 109667,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1825,6 +2409,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 315500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 601739,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1849,6 +2441,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 581000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 1219524,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1860,6 +2460,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 317000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 550000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1884,6 +2492,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004583",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 102800,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 118333,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1908,6 +2524,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 169900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 320000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1932,6 +2556,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260514000698",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 19100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -1952,6 +2584,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 24900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 39765,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -1976,6 +2616,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001379",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 68300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 119733,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2013,6 +2661,14 @@
         "exDate": "2026-11-27",
         "lastBuyDate": "2026-11-26",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 65500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 124353,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2050,6 +2706,14 @@
         "exDate": "2026-11-27",
         "lastBuyDate": "2026-11-26",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 59900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 95000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2087,6 +2751,14 @@
         "exDate": "2026-09-29",
         "lastBuyDate": "2026-09-28",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 12000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 36500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2111,6 +2783,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 178900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 285200,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2127,6 +2807,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 2910,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 4716,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2164,12 +2852,28 @@
         "exDate": "2026-11-27",
         "lastBuyDate": "2026-11-26",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 97600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 140000,
+        "asOf": "2026-11-20"
       }
     },
     {
       "code": "0220W0",
       "name": "한화머시너리앤서비스홀딩스",
-      "corpCode": "02042949"
+      "corpCode": "02042949",
+      "quote": {
+        "amount": 7810,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
+      }
     },
     {
       "code": "022100",
@@ -2193,6 +2897,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260417000431",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 19840,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 27000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2217,6 +2929,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001405",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 76900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 137231,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2241,6 +2961,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000761",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 18450,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 26667,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2265,6 +2993,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000207",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 26550,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -2285,6 +3021,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 55700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 81667,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2309,6 +3053,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 250000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 488000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2333,6 +3085,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001097",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 4675,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 8700,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2357,6 +3117,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004049",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 40500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 56500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2381,6 +3149,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002959",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 18300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 23045,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2418,6 +3194,14 @@
         "exDate": "2026-10-27",
         "lastBuyDate": "2026-10-26",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 44200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 74250,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2442,6 +3226,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000442",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 14700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 20400,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2466,6 +3258,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 229000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 353643,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2490,6 +3290,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 179400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 248143,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2501,6 +3309,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001246",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 40200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 100429,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2512,6 +3328,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 6540,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 11333,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2536,6 +3360,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001270",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 10800,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 14909,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2560,6 +3392,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 454000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 744545,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2584,6 +3424,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000917",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 13900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 18444,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2608,6 +3456,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001021",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 150800,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 292048,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2632,6 +3488,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 29100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 43750,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2652,6 +3516,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001058",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 35250,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 49900,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2676,6 +3548,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001448",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 169000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 335750,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2700,6 +3580,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000838",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 190500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 336600,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2711,6 +3599,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 40400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 98545,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2735,6 +3631,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 154100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 250000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2746,6 +3650,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 9890,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 17942,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2770,6 +3682,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 45500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 88933,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2794,6 +3714,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001461",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 95000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 159130,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2818,6 +3746,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000091",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 33150,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 56182,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2842,6 +3778,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 245000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 307188,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2866,6 +3810,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 194200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 352250,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2890,6 +3842,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326001003",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 60300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 138100,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2927,6 +3887,14 @@
         "exDate": "2026-11-02",
         "lastBuyDate": "2026-10-30",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 82600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 133737,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2951,6 +3919,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 101800,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 263556,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2975,6 +3951,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 58000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 157045,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -2999,6 +3983,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000832",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 62500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 99167,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3023,6 +4015,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260706000276",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 125100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 247188,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3034,6 +4034,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814000818",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 67100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 171938,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3058,6 +4066,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 202500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 296842,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3082,6 +4098,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260402002347",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 10830,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 23000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3106,6 +4130,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001528",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 93300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 171429,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3130,6 +4162,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001314",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 90100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 130188,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3154,6 +4194,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001006",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 122300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 237333,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3174,6 +4222,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000652",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 62400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 108000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3185,6 +4241,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001327",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 30550,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 89500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3196,6 +4260,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000836",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 4985,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 7611,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3220,6 +4292,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000836",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 70000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 117667,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3244,6 +4324,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001211",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 340000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 706429,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3281,6 +4369,14 @@
         "exDate": "2026-10-15",
         "lastBuyDate": "2026-10-14",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 29800,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 54714,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3292,6 +4388,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000939",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 20450,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 77800,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3316,6 +4420,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001205",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 190400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 308278,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3353,6 +4465,14 @@
         "exDate": "2026-11-06",
         "lastBuyDate": "2026-11-05",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 118000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 166650,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3369,6 +4489,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003585",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 3360,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 5727,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3393,6 +4521,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 134900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 184150,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3404,6 +4540,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001491",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 7990,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 20000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3420,6 +4564,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 91700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 203364,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3457,6 +4609,14 @@
         "exDate": "2026-11-27",
         "lastBuyDate": "2026-11-26",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 176700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 275417,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3481,6 +4641,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001327",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 44450,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 87800,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3518,6 +4686,14 @@
         "exDate": "2026-11-11",
         "lastBuyDate": "2026-11-10",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 145000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 218684,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3542,6 +4718,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001279",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 67800,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 105833,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3566,6 +4750,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001110",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 39050,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 74727,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3590,6 +4782,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331001900",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 33600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 68800,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3614,6 +4814,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001130",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 435500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 682353,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3634,6 +4842,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001064",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 7130,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -3654,6 +4870,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004202",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 122700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 154167,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3691,6 +4915,14 @@
         "exDate": "2026-11-09",
         "lastBuyDate": "2026-11-06",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 12320,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 18767,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3715,6 +4947,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000720",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 15240,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 23067,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3739,6 +4979,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 62300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 83273,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3763,6 +5011,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 58700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 85867,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3787,6 +5043,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001196",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 116400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 167050,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3824,6 +5088,14 @@
         "exDate": "2026-11-10",
         "lastBuyDate": "2026-11-09",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 24600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 37100,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3848,6 +5120,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 216500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -3872,6 +5152,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001376",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 58500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 94667,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3896,6 +5184,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260724000595",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 54700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 80300,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3920,6 +5216,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000694",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 283000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 387150,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3944,6 +5248,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000883",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 30650,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 53316,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3955,6 +5267,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 1293000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 1946431,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -3992,6 +5312,14 @@
         "exDate": "2026-11-12",
         "lastBuyDate": "2026-11-11",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 47750,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 78429,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4012,6 +5340,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001170",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 30500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 45947,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4028,6 +5364,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 191400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 301905,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4065,6 +5409,14 @@
         "exDate": "2026-11-10",
         "lastBuyDate": "2026-11-09",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 107500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 263500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4102,6 +5454,14 @@
         "exDate": "2026-11-10",
         "lastBuyDate": "2026-11-09",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 385000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 837889,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4126,6 +5486,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260602000456",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 75300,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 156143,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4150,6 +5518,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003661",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 127000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -4174,6 +5550,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001320",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 114500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 176833,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4198,6 +5582,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000644",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 44850,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 96563,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4214,6 +5606,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 256000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 456136,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4238,6 +5638,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000907",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 135500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 175769,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4262,6 +5670,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 133400,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 188625,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4286,6 +5702,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000495",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 37250,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 64000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4310,6 +5734,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004548",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 241500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 428000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4334,6 +5766,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 1661000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 3441176,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4358,6 +5798,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 148900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 219167,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4382,6 +5830,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000863",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 14850,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 20000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4393,6 +5849,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000936",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 36900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 52000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4417,6 +5881,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 282000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 468571,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4454,6 +5926,14 @@
         "exDate": "2026-11-09",
         "lastBuyDate": "2026-11-06",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 30600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 43550,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4478,6 +5958,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 20850,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 27800,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4489,6 +5977,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000773",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 81900,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 143889,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4509,6 +6005,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 240500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 576000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4533,6 +6037,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 171600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 264500,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4544,6 +6056,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001149",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 10610,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -4555,6 +6075,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 293000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 518450,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4579,6 +6107,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814003447",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 44350,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 83227,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4590,6 +6126,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001366",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 32550,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 52333,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4614,6 +6158,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001512",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 57600,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 90875,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4625,6 +6177,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 691000,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 1475000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4662,6 +6222,14 @@
         "exDate": "2026-11-09",
         "lastBuyDate": "2026-11-06",
         "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      },
+      "quote": {
+        "amount": 176200,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 293538,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4673,6 +6241,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000475",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 24500,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -4684,6 +6260,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 48150,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 68000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4704,6 +6288,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000943",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 47750,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 98000,
+        "asOf": "2026-11-20"
       }
     },
     {
@@ -4715,6 +6307,14 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001027",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 69100,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": null,
+        "checkedOn": "2026-11-24"
       }
     },
     {
@@ -4739,10 +6339,18 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260407001978",
         "checkedOn": "2026-11-23"
+      },
+      "quote": {
+        "amount": 125700,
+        "tradedAt": "2026-11-23T20:00:00+09:00"
+      },
+      "consensus": {
+        "amount": 242222,
+        "asOf": "2026-11-20"
       }
     }
   ],
   "membershipDate": "2026-11-23",
-  "updatedAt": "2026-11-23T13:21:21+09:00",
+  "updatedAt": "2026-11-24T04:33:26+09:00",
   "noticesThrough": "2026-11-23"
 }

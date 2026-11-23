@@ -93,13 +93,38 @@ function annualSection(annual) {
       ${sourceLink(annual.source, "연간 배당 근거")}</p></section>`;
 }
 
+function quoteAmount(value) {
+  if (value == null) return null;
+  const n = Number(String(value).replace(/[,원\s]/g, ""));
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
+function marketValues(stock) {
+  const price = quoteAmount(stock.quote ? stock.quote.amount : stock.price);
+  const target = quoteAmount(stock.consensus ? stock.consensus.amount : stock.targetPrice);
+  const upside = price && target ? (target / price - 1) * 100 : null;
+  return {price, target, upside};
+}
+
+function marketDetails(stock, upside) {
+  const q = stock.quote, c = stock.consensus;
+  const traded = q?.tradedAt?.replace("T", " ").slice(0, 16);
+  const url = "https://m.stock.naver.com/domestic/stock/" + encodeURIComponent(stock.code) + "/total";
+  return `<section><h3>주가 기준</h3><dl>
+    ${line("시세 기준 (한국시간)", (traded || "확인 대기") + (stock.quoteDelayed ? " · 갱신 지연" : ""))}
+    ${line(c?.asOf ? "평균 목표주가 집계일" : "목표주가 확인일", (c?.asOf || c?.checkedOn || "확인 대기") + (stock.consensusDelayed ? " · 갱신 지연" : ""))}
+    ${upside == null ? "" : line("현재가 대비 목표주가", (upside > 0 ? "+" : "") + upside.toFixed(1) + "%")}
+    ${stock.changeRate == null ? "" : line("등락률", stock.changeRate)}
+    </dl><p class="sources">${sourceLink(url, "네이버페이 증권에서 확인")}</p></section>`;
+}
+
 function stockCard(stock) {
   const event = visibleEvent(stock);
-  const market = [
-    ["최근 종가", stock.price], ["등락률", stock.changeRate],
-    ["평균 목표주가", stock.targetPrice],
-    ["목표주가 상승여력", stock.upside == null ? null : stock.upside + "%"]
-  ].filter(([, value]) => value != null);
+  const {price, target, upside} = marketValues(stock);
+  const priceText = price ? won.format(price) + "원" : "확인 대기";
+  const quoteStamp = stock.quote?.tradedAt?.slice(5, 16).replace("-", ".").replace("T", " ");
+  const targetText = target ? won.format(target) + "원" :
+    stock.consensus?.amount === null && !stock.consensusDelayed ? "자료 없음" : "확인 대기";
   const previous = [["배당금", stock.dividend], ["마지막 매수일", stock.lastBuyDate],
     ["배당락일", stock.exDate], ["배당기준일", stock.recordDate]]
     .filter(([, value]) => value != null);
@@ -119,12 +144,17 @@ function stockCard(stock) {
       <span class="quote"><strong>${amount == null ? "확인 대기" : won.format(amount) + '<small>원</small>'}</strong>
         <small>${escapeHTML(label || (event?.unavailable ? "공시 확인 중" : "주당 배당금"))}</small></span>
       <svg class="icon chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+      <span class="market-preview">
+        <span>현재가 <b>${priceText}</b>${stock.quoteDelayed && price ? " (이전)" : ""}</span>
+        <span>평균 목표주가 <b>${targetText}</b>${stock.consensusDelayed && target ? " (이전)" : ""}</span>
+        ${quoteStamp ? '<small>' + escapeHTML(quoteStamp) + ' 시세</small>' : ""}
+      </span>
     </summary><div class="detail">
+    ${marketDetails(stock, upside)}
     ${event ? quarterSection(event) : '<p class="caption">확인된 배당 일정 없음</p>'}
     ${history.length ? annualSection(stock.annual) :
       (stock.annual ? '<p class="sources">' + escapeHTML(stock.annual.reportYear) + '년 보통주 주당배당금 확인 대기 · ' + sourceLink(stock.annual.source, "연간 공시") + '</p>' : "")}
     ${!event && previous.length ? "<dl>" + previous.map(pair => line(...pair)).join("") + "</dl>" : ""}
-    ${market.length ? "<section><h3>주가 정보</h3><dl>" + market.map(pair => line(...pair)).join("") + "</dl></section>" : ""}
     </div></details></article>`;
 }
 
@@ -183,7 +213,7 @@ function render() {
         const order = (da >= today ? da : "9999").localeCompare(db >= today ? db : "9999") || db.localeCompare(da);
         if (order) return order;
       } else if (sort.value === "upside") {
-        const order = (b.upside ?? -Infinity) - (a.upside ?? -Infinity);
+        const order = (marketValues(b).upside ?? -Infinity) - (marketValues(a).upside ?? -Infinity);
         if (order) return order;
       }
       return a.name.localeCompare(b.name, "ko");
