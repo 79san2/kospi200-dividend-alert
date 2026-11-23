@@ -1,5 +1,30 @@
-
 {
-  "updated": "데이터 연결 전",
-  "stocks": []
+  "updated": "2026-11-23",
+  "stocks": [
+    {
+      "name": "삼성전자",
+      "code": "005930",
+      "quarter": {
+        "period": "2026년 3분기",
+        "amount": 4601,
+        "recordDate": "2026-09-30",
+        "lastBuyDate": "2026-09-28",
+        "exDate": "2026-09-29",
+        "paymentDate": "2026-11-27",
+        "source": "https://www.samsung.com/sec/ir/stock-information/shareholder-return/",
+        "decisionSource": "https://www.samsung.com/sec/ir/reports-disclosures/public-disclosure/4083/",
+        "tradingSource": "https://inews24.com/view/wnrd/2009806",
+        "checkedOn": "2026-11-23"
+      },
+      "annual": {
+        "history": [
+          {"year": 2025, "amount": 1668},
+          {"year": 2024, "amount": 1446},
+          {"year": 2023, "amount": 1444}
+        ],
+        "source": "https://www.samsung.com/sec/ir/stock-information/shareholder-return/",
+        "checkedOn": "2026-11-23"
+      }
+    }
+  ]
 }

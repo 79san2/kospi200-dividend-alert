@@ -63,3 +63,21 @@ input, select {
   font-size: 12px;
   line-height: 1.6;
 }
+
+.stock h2 { font-size: 21px; margin: 0; }
+.stock h2 small, .amount small { color: #52695f; font-size: 14px; font-weight: 400; }
+.stock section { border-top: 1px solid #e1e8e3; margin-top: 17px; padding-top: 17px; }
+.stock h3 { font-size: 16px; margin: 0 0 4px; }
+.stock .amount { font-size: 29px; font-weight: 700; color: #13533e; }
+.stock .status { display: inline-block; padding: 4px 8px; border-radius: 5px; background: #f3eee6; color: #664a28; }
+.stock dl { margin: 12px 0; }
+.stock dl div { display: flex; justify-content: space-between; gap: 12px; padding: 5px 0; }
+.stock dt, .stock dd { font-size: 14px; }
+.stock dd { margin: 0; font-weight: 600; }
+.stock .sources, .stock .caption { color: #53675e; font-size: 13px; line-height: 1.6; }
+.stock a { color: #1b6448; text-underline-offset: 2px; }
+.history { list-style: none; padding: 0; margin: 12px 0; }
+.history li { display: grid; grid-template-columns: 4em minmax(20px, 1fr) 5em; align-items: center; gap: 8px; font-size: 14px; margin: 8px 0; }
+.history strong { text-align: right; }
+.track { background: #eaf0eb; height: 7px; border-radius: 5px; overflow: hidden; }
+.track i { display: block; background: #46866a; height: 100%; }

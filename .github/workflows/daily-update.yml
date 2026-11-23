@@ -1,10 +1,13 @@
-
 name: Daily Data Update
 
 on:
   schedule:
-  - cron: "20 0 * * 1-5"
+    - cron: "20 0 * * 1-5"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_data.py"
 
 permissions:
   contents: write
@@ -22,12 +25,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      
       - name: Run update script
         env:
           OPENDART_API_KEY: ${{ secrets.OPENDART_API_KEY }}
         run: python scripts/update_data.py
-
 
       - name: Save updated data
         run: |
