@@ -95,6 +95,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261109800479",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261109800479",
+        "publishedOn": "2026-11-09",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 1000,
+        "recordDate": "2026-11-24",
+        "paymentDate": "2026-12-09",
+        "exDate": "2026-11-23",
+        "lastBuyDate": "2026-11-20",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -426,7 +439,20 @@
       "name": "오리온홀딩스",
       "corpCode": "00117577",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 1100
+          },
+          {
+            "year": 2024,
+            "amount": 800
+          },
+          {
+            "year": 2023,
+            "amount": 750
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000838",
         "checkedOn": "2026-11-23"
@@ -454,6 +480,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000458",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261116801039",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261116801039",
+        "publishedOn": "2026-11-16",
+        "checkedOn": "2026-11-23",
+        "period": "중간배당",
+        "amount": 630,
+        "recordDate": "2026-11-06",
+        "paymentDate": "2026-11-23",
+        "exDate": "2026-11-05",
+        "lastBuyDate": "2026-11-04",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -461,7 +500,20 @@
       "name": "KCC",
       "corpCode": "00105271",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 15000
+          },
+          {
+            "year": 2024,
+            "amount": 10000
+          },
+          {
+            "year": 2023,
+            "amount": 8000
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001896",
         "checkedOn": "2026-11-23"
@@ -513,6 +565,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000483",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261014800503",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261014800503",
+        "publishedOn": "2026-10-14",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 1000,
+        "recordDate": "2026-10-31",
+        "paymentDate": "2026-11-19",
+        "exDate": "2026-10-29",
+        "lastBuyDate": "2026-10-28",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -749,6 +814,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001039",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261110800287",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110800287",
+        "publishedOn": "2026-11-10",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 2600,
+        "recordDate": "2026-11-30",
+        "paymentDate": "2026-12-18",
+        "exDate": "2026-11-27",
+        "lastBuyDate": "2026-11-26",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -845,6 +923,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261029800269",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029800269",
+        "publishedOn": "2026-10-29",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 2500,
+        "recordDate": "2026-11-30",
+        "paymentDate": "2026-12-30",
+        "exDate": "2026-11-27",
+        "lastBuyDate": "2026-11-26",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -880,6 +971,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261113801151",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113801151",
+        "publishedOn": "2026-11-13",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 2000,
+        "recordDate": "2026-11-30",
+        "paymentDate": "2026-12-11",
+        "exDate": "2026-11-27",
+        "lastBuyDate": "2026-11-26",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -911,7 +1015,20 @@
       "name": "에스엘",
       "corpCode": "00125521",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 2770
+          },
+          {
+            "year": 2024,
+            "amount": 1200
+          },
+          {
+            "year": 2023,
+            "amount": 900
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000781",
         "checkedOn": "2026-11-23"
@@ -951,7 +1068,20 @@
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
         "checkedOn": "2026-11-23"
       },
-      "corpCode": "00126380"
+      "corpCode": "00126380",
+      "decision": {
+        "receipt": "20261029800101",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029800101",
+        "publishedOn": "2026-10-29",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 4601,
+        "recordDate": "2026-09-30",
+        "paymentDate": "2026-11-27",
+        "exDate": "2026-09-29",
+        "lastBuyDate": "2026-09-28",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
+      }
     },
     {
       "code": "005940",
@@ -999,6 +1129,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001195",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20260907800195",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260907800195",
+        "publishedOn": "2026-09-07",
+        "checkedOn": "2026-11-23",
+        "paymentDate": "2026-09-11",
+        "period": "중간배당",
+        "amount": 600,
+        "recordDate": "2026-08-31",
+        "exDate": "2026-08-28",
+        "lastBuyDate": "2026-08-27",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -1006,7 +1149,20 @@
       "name": "LS",
       "corpCode": "00105952",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 2500
+          },
+          {
+            "year": 2024,
+            "amount": 1650
+          },
+          {
+            "year": 2023,
+            "amount": 1600
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001427",
         "checkedOn": "2026-11-23"
@@ -1017,7 +1173,20 @@
       "name": "녹십자",
       "corpCode": "00129679",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 1500
+          },
+          {
+            "year": 2024,
+            "amount": 1500
+          },
+          {
+            "year": 2023,
+            "amount": 1500
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001316",
         "checkedOn": "2026-11-23"
@@ -1168,7 +1337,20 @@
       "name": "이수페타시스",
       "corpCode": "00107613",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 230
+          },
+          {
+            "year": 2024,
+            "amount": 150
+          },
+          {
+            "year": 2023,
+            "amount": 100
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847",
         "checkedOn": "2026-11-23"
@@ -1179,7 +1361,20 @@
       "name": "율촌화학",
       "corpCode": "00145260",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 250
+          },
+          {
+            "year": 2024,
+            "amount": 250
+          },
+          {
+            "year": 2023,
+            "amount": 250
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113001266",
         "checkedOn": "2026-11-23"
@@ -1254,7 +1449,16 @@
       "name": "한샘",
       "corpCode": "00161693",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2024,
+            "amount": 8530
+          },
+          {
+            "year": 2023,
+            "amount": 4500
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001167",
         "checkedOn": "2026-11-23"
@@ -1333,6 +1537,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261002800965",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261002800965",
+        "publishedOn": "2026-10-02",
+        "checkedOn": "2026-11-23",
+        "period": "중간배당",
+        "amount": 3000,
+        "recordDate": "2026-10-19",
+        "paymentDate": "2026-11-09",
+        "exDate": "2026-10-16",
+        "lastBuyDate": "2026-10-15",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -1364,7 +1581,20 @@
       "name": "LS ELECTRIC",
       "corpCode": "00105855",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 3000
+          },
+          {
+            "year": 2024,
+            "amount": 2900
+          },
+          {
+            "year": 2023,
+            "amount": 2800
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
         "checkedOn": "2026-11-23"
@@ -1392,6 +1622,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260813001726",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261104800480",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261104800480",
+        "publishedOn": "2026-11-04",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 5000,
+        "recordDate": "2026-11-19",
+        "paymentDate": "2026-12-04",
+        "exDate": "2026-11-18",
+        "lastBuyDate": "2026-11-17",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -1624,7 +1867,20 @@
       "name": "에스원",
       "corpCode": "00158501",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 3200
+          },
+          {
+            "year": 2024,
+            "amount": 2700
+          },
+          {
+            "year": 2023,
+            "amount": 2700
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004583",
         "checkedOn": "2026-11-23"
@@ -1744,6 +2000,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261029800802",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029800802",
+        "publishedOn": "2026-10-29",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 830,
+        "recordDate": "2026-11-30",
+        "paymentDate": "2026-12-17",
+        "exDate": "2026-11-27",
+        "lastBuyDate": "2026-11-26",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -1768,6 +2037,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001372",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261113801223",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261113801223",
+        "publishedOn": "2026-11-13",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 1000,
+        "recordDate": "2026-11-30",
+        "paymentDate": "2026-12-18",
+        "exDate": "2026-11-27",
+        "lastBuyDate": "2026-11-26",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -1792,6 +2074,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001272",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261001800104",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261001800104",
+        "publishedOn": "2026-10-01",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 100,
+        "recordDate": "2026-09-30",
+        "paymentDate": "2026-10-16",
+        "exDate": "2026-09-29",
+        "lastBuyDate": "2026-09-28",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -1823,7 +2118,12 @@
       "name": "한온시스템",
       "corpCode": "00161125",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2023,
+            "amount": 316
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
         "checkedOn": "2026-11-23"
@@ -1834,10 +2134,36 @@
       "name": "코웨이",
       "corpCode": "00170558",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 1940
+          },
+          {
+            "year": 2024,
+            "amount": 2630
+          },
+          {
+            "year": 2023,
+            "amount": 1350
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000924",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261105800921",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261105800921",
+        "publishedOn": "2026-11-05",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 700,
+        "recordDate": "2026-11-30",
+        "paymentDate": null,
+        "exDate": "2026-11-27",
+        "lastBuyDate": "2026-11-26",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -1850,7 +2176,20 @@
       "name": "포스코DX",
       "corpCode": "00155212",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 125
+          },
+          {
+            "year": 2024,
+            "amount": 125
+          },
+          {
+            "year": 2023,
+            "amount": 100
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260417000431",
         "checkedOn": "2026-11-23"
@@ -2066,6 +2405,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261013800366",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261013800366",
+        "publishedOn": "2026-10-13",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 600,
+        "recordDate": "2026-10-28",
+        "paymentDate": "2026-11-12",
+        "exDate": "2026-10-27",
+        "lastBuyDate": "2026-10-26",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -2073,7 +2425,20 @@
       "name": "LG유플러스",
       "corpCode": "00231363",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 660
+          },
+          {
+            "year": 2024,
+            "amount": 650
+          },
+          {
+            "year": 2023,
+            "amount": 650
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000442",
         "checkedOn": "2026-11-23"
@@ -2084,7 +2449,20 @@
       "name": "삼성생명",
       "corpCode": "00126256",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 5300
+          },
+          {
+            "year": 2024,
+            "amount": 4500
+          },
+          {
+            "year": 2023,
+            "amount": 3700
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
         "checkedOn": "2026-11-23"
@@ -2189,7 +2567,20 @@
       "name": "강원랜드",
       "corpCode": "00255619",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 950
+          },
+          {
+            "year": 2024,
+            "amount": 1170
+          },
+          {
+            "year": 2023,
+            "amount": 930
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000917",
         "checkedOn": "2026-11-23"
@@ -2410,7 +2801,20 @@
       "name": "한전KPS",
       "corpCode": "00159218",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 1651
+          },
+          {
+            "year": 2024,
+            "amount": 2469
+          },
+          {
+            "year": 2023,
+            "amount": 2158
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000091",
         "checkedOn": "2026-11-23"
@@ -2510,6 +2914,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261007000218",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261027800250",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027800250",
+        "publishedOn": "2026-10-27",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 740,
+        "recordDate": "2026-11-03",
+        "paymentDate": "2026-11-27",
+        "exDate": "2026-11-02",
+        "lastBuyDate": "2026-10-30",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -2624,7 +3041,20 @@
       "name": "셀트리온",
       "corpCode": "00413046",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 750
+          },
+          {
+            "year": 2024,
+            "amount": 750
+          },
+          {
+            "year": 2023,
+            "amount": 500
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
         "checkedOn": "2026-11-23"
@@ -2838,6 +3268,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000916",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261014800392",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261014800392",
+        "publishedOn": "2026-10-14",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 960,
+        "recordDate": "2026-10-16",
+        "paymentDate": null,
+        "exDate": "2026-10-15",
+        "lastBuyDate": "2026-10-14",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -2897,6 +3340,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814004019",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261023800567",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261023800567",
+        "publishedOn": "2026-10-23",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 1165,
+        "recordDate": "2026-11-09",
+        "paymentDate": "2026-11-20",
+        "exDate": "2026-11-06",
+        "lastBuyDate": "2026-11-05",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -2988,6 +3444,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261109800711",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261109800711",
+        "publishedOn": "2026-11-09",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 1500,
+        "recordDate": "2026-11-30",
+        "paymentDate": null,
+        "exDate": "2026-11-27",
+        "lastBuyDate": "2026-11-26",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -3036,6 +3505,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260619000667",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261029800391",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029800391",
+        "publishedOn": "2026-10-29",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 1167,
+        "recordDate": "2026-11-12",
+        "paymentDate": null,
+        "exDate": "2026-11-11",
+        "lastBuyDate": "2026-11-10",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -3196,6 +3678,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261110800452",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261110800452",
+        "publishedOn": "2026-11-10",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 150,
+        "recordDate": "2026-11-10",
+        "paymentDate": "2026-11-25",
+        "exDate": "2026-11-09",
+        "lastBuyDate": "2026-11-06",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -3316,6 +3811,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001225",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261027800427",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027800427",
+        "publishedOn": "2026-10-27",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 317,
+        "recordDate": "2026-11-11",
+        "paymentDate": "2026-11-25",
+        "exDate": "2026-11-10",
+        "lastBuyDate": "2026-11-09",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -3471,6 +3979,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001265",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261029800687",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029800687",
+        "publishedOn": "2026-10-29",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 400,
+        "recordDate": "2026-11-13",
+        "paymentDate": "2026-11-30",
+        "exDate": "2026-11-12",
+        "lastBuyDate": "2026-11-11",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -3531,6 +4052,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261027800433",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027800433",
+        "publishedOn": "2026-10-27",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 1300,
+        "recordDate": "2026-11-11",
+        "paymentDate": "2026-12-03",
+        "exDate": "2026-11-10",
+        "lastBuyDate": "2026-11-09",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -3538,10 +4072,36 @@
       "name": "HD현대일렉트릭",
       "corpCode": "01205851",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 7100
+          },
+          {
+            "year": 2024,
+            "amount": 5350
+          },
+          {
+            "year": 2023,
+            "amount": 1000
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261027800213",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261027800213",
+        "publishedOn": "2026-10-27",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 1300,
+        "recordDate": "2026-11-11",
+        "paymentDate": "2026-11-26",
+        "exDate": "2026-11-10",
+        "lastBuyDate": "2026-11-09",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -3549,7 +4109,20 @@
       "name": "HD건설기계",
       "corpCode": "01205842",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 550
+          },
+          {
+            "year": 2024,
+            "amount": 500
+          },
+          {
+            "year": 2023,
+            "amount": 700
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260602000456",
         "checkedOn": "2026-11-23"
@@ -3768,7 +4341,20 @@
       "name": "HS효성첨단소재",
       "corpCode": "01316254",
       "annual": {
-        "history": [],
+        "history": [
+          {
+            "year": 2025,
+            "amount": 2500
+          },
+          {
+            "year": 2024,
+            "amount": 6500
+          },
+          {
+            "year": 2023,
+            "amount": 6500
+          }
+        ],
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146",
         "checkedOn": "2026-11-23"
@@ -3855,6 +4441,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261023800653",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261023800653",
+        "publishedOn": "2026-10-23",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 220,
+        "recordDate": "2026-11-10",
+        "paymentDate": "2026-11-30",
+        "exDate": "2026-11-09",
+        "lastBuyDate": "2026-11-06",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -4050,6 +4649,19 @@
         "reportYear": 2025,
         "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512",
         "checkedOn": "2026-11-23"
+      },
+      "decision": {
+        "receipt": "20261026800310",
+        "source": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261026800310",
+        "publishedOn": "2026-10-26",
+        "checkedOn": "2026-11-23",
+        "period": "분기배당",
+        "amount": 900,
+        "recordDate": "2026-11-10",
+        "paymentDate": "2026-11-24",
+        "exDate": "2026-11-09",
+        "lastBuyDate": "2026-11-06",
+        "tradingSource": "https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp"
       }
     },
     {
@@ -4131,5 +4743,6 @@
     }
   ],
   "membershipDate": "2026-11-23",
-  "updatedAt": "2026-11-23T13:18:40+09:00"
+  "updatedAt": "2026-11-23T13:21:21+09:00",
+  "noticesThrough": "2026-11-23"
 }
