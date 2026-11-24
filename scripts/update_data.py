@@ -78,6 +78,21 @@ def refresh_members():
         return saved
 
 
+def refresh_public_ir(today, stocks):
+    try:
+        stock = stocks.get("005930")
+        if stock is not None:
+            event = get_quarter(today)
+            prev = stock.get("quarter", {})
+            if event["recordDate"] >= prev.get("recordDate", ""):
+                stock["quarter"] = {**(prev if event["recordDate"] == prev.get("recordDate") else {}), **event}
+                return True
+    except Exception as err:
+        print(f"::warning::삼성전자 IR 갱신 지연 ({type(err).__name__})")
+
+    return False
+
+
 def refresh_dividends(key, today, stocks, data):
     try:
         mapping = corp_codes(key)
@@ -99,15 +114,6 @@ def refresh_dividends(key, today, stocks, data):
         print(f"::warning::배당결정 목록 수집 지연 ({type(err).__name__})")
         notices = {}
     calendar = exchange_calendars.get_calendar("XKRX")
-    try:
-        stock = stocks.get("005930")
-        if stock is not None:
-            event = get_quarter(today)
-            prev = stock.get("quarter", {})
-            if event["recordDate"] >= prev.get("recordDate", ""):
-                stock["quarter"] = {**(prev if event["recordDate"] == prev.get("recordDate") else {}), **event}
-    except Exception as err:
-        print(f"::warning::삼성전자 IR 갱신 지연 ({type(err).__name__})")
 
     def update(stock):
         code = stock["code"]
@@ -163,12 +169,13 @@ def main():
     old = {s["code"]: s for s in data["stocks"]}
     stocks = {r["code"]: {**old.get(r["code"], {}), **r} for r in roster["stocks"]}
     prices_ok = refresh_prices(stocks, today)
+    ir_ok = refresh_public_ir(today, stocks)
     dividends_ok = False
     if key:
         dividends_ok = refresh_dividends(key, today, stocks, data)
     else:
         print("::warning::OpenDART 인증키 미설정 · 배당자료 이전 확인일 유지")
-    if not (prices_ok or dividends_ok):
+    if not (prices_ok or dividends_ok or ir_ok):
         sys.exit("자료 수집 실패 · 기존 자료 유지")
     data.update(updatedAt=datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds"),
                 membershipDate=roster["updated"], stocks=list(stocks.values()))
