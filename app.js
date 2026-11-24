@@ -159,7 +159,13 @@ function investmentSection(stock) {
   const change = days.length > 1 ? (days[days.length-1][1] / days[0][1] - 1) * 100 : null;
   const pct = n => (n > 0 ? "+" : "") + n.toFixed(1) + "%";
   const url = "https://finance.naver.com/item/coinfo.naver?code=" + encodeURIComponent(stock.code);
-  return `<section><h3>투자 핵심정보</h3><dl>${line("목표주가 대비 상승여력", upside == null || stale ? "최신 자료 확인 대기" : pct(upside))}${line("최근 종가 변동", change == null || stock.chartDelayed ? "확인 대기" : pct(change) + " (" + days.length + "거래일)")}${line("실적·주주환원 분석", "공식 자료 연동 대기")}</dl><p class="caption">목표주가는 전망치이며 상승을 보장하지 않습니다.</p><p class="sources">${sourceLink(url, "기업 실적·투자정보 확인")}</p></section>`;
+  const history = Object.entries(stock.targetHistory || {}).filter(([d,v]) => /^\d{4}-\d{2}-\d{2}$/.test(d) && Number.isFinite(v) && v > 0).sort(([a],[b]) => a.localeCompare(b));
+  const last = history.at(-1), prior = history.at(-2);
+  const targetChange = last && prior && !stock.consensusDelayed && stock.consensus?.amount === last[1] ? pct((last[1]/prior[1]-1)*100) + " (" + prior[0] + " → " + last[0] + ")" : "비교 자료 축적 중";
+  const risk = upside == null || stale ? "최신 목표주가·시세 확인 필요" : upside < 0 ? "현재가가 평균 목표주가보다 높음" : "목표주가와 실제 수익률은 다를 수 있음";
+  const reports = "https://finance.naver.com/research/company_list.naver?searchType=itemCode&itemCode=" + encodeURIComponent(stock.code);
+
+  return `<section><h3>투자 핵심정보</h3><dl>${line("목표주가 대비 상승여력", upside == null || stale ? "최신 자료 확인 대기" : pct(upside))}${line("최근 종가 변동", change == null || stock.chartDelayed ? "확인 대기" : pct(change) + " (" + days.length + "거래일)")}${line("평균 목표주가 변동", targetChange)}${line("투자 유의사항", risk)}${line("실적·주주환원 분석", "공식 자료 연동 대기")}</dl><p class="caption">목표주가는 전망치이며 상승을 보장하지 않습니다.</p><p class="sources">${sourceLink(url, "기업 실적·투자정보 확인")} · ${sourceLink(reports, "증권사 리포트 검색")}</p></section>`;
 }
 
 function stockCard(stock, detail = false) {
