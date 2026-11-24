@@ -37,9 +37,8 @@
     <section class="panel" aria-labelledby="view-title">
       <button id="back-to-list" type="button" hidden>‹ 목록으로</button>
       <div class="panel-heading"><h2 id="view-title" tabindex="-1">배당 일정</h2><span class="count" id="count"></span></div>
-      <div id="schedule-filter" class="segment" aria-label="일정 구분">
+      <div id="schedule-filter" hidden class="segment" aria-label="일정 구분">
         <button type="button" data-period="upcoming" aria-pressed="true">다가오는 일정</button>
-        <button type="button" data-period="past" aria-pressed="false">지난 일정</button>
       </div>
       <div id="list-tools" hidden>
         <label class="search-field"><svg class="icon"><use href="#i-search"/></svg><input id="search" type="search" aria-label="종목 검색" placeholder="종목명 또는 코드 검색" autocomplete="off"></label>
@@ -55,7 +54,7 @@
     </section>
     <p id="feedback" role="status" class="sr-only"></p>
   </main>
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
   <script src="install.js"></script>
 </body>
 </html>
