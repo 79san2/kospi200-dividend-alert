@@ -484,7 +484,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 31250,
@@ -1070,7 +1070,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 179700,
@@ -1178,7 +1178,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 23550,
@@ -1245,7 +1245,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 129300,
@@ -1353,7 +1353,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 14620,
@@ -1461,7 +1461,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 821000,
@@ -2064,7 +2064,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 10000,
@@ -2277,7 +2277,7 @@
         "source": "https://www.samsung.com/sec/ir/stock-information/shareholder-return/",
         "decisionSource": "https://www.samsung.com/sec/ir/reports-disclosures/public-disclosure/4083/",
         "tradingSource": "https://inews24.com/view/wnrd/2009806",
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "annual": {
         "history": [
@@ -2813,7 +2813,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 308500,
@@ -2975,7 +2975,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 12810,
@@ -3075,7 +3075,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 41700,
@@ -3387,7 +3387,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 163000,
@@ -4279,7 +4279,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 21150,
@@ -4786,7 +4786,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 7770,
@@ -5002,7 +5002,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 27300,
@@ -8171,7 +8171,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 6310,
@@ -8625,7 +8625,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 123800,
@@ -9287,7 +9287,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 126700,
@@ -10221,7 +10221,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 15940,
@@ -10560,7 +10560,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 30350,
@@ -10692,7 +10692,7 @@
       },
       "consensus": {
         "amount": null,
-        "checkedOn": "2026-11-24"
+        "checkedOn": "2026-11-25"
       },
       "dailyCloses": {
         "2026-10-28": 76800,
@@ -10773,6 +10773,6 @@
     }
   ],
   "membershipDate": "2026-11-24",
-  "updatedAt": "2026-11-24T22:12:30+09:00",
+  "updatedAt": "2026-11-25T04:51:41+09:00",
   "noticesThrough": "2026-11-24"
 }
