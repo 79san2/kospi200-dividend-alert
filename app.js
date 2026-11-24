@@ -152,6 +152,16 @@ function priceChart(stock) {
       </tbody></table></details></section>`;
 }
 
+function investmentSection(stock) {
+  const {upside} = marketValues(stock);
+  const stale = stock.quoteDelayed || stock.consensusDelayed;
+  const days = Object.entries(stock.dailyCloses || {}).filter(([d,v]) => /^\\d{4}-\\d{2}-\\d{2}$/.test(d) && Number.isFinite(v) && v > 0).sort(([a],[b]) => a.localeCompare(b));
+  const change = days.length > 1 ? (days[days.length-1][1] / days[0][1] - 1) * 100 : null;
+  const pct = n => (n > 0 ? "+" : "") + n.toFixed(1) + "%";
+  const url = "https://finance.naver.com/item/coinfo.naver?code=" + encodeURIComponent(stock.code);
+  return `<section><h3>투자 핵심정보</h3><dl>${line("목표주가 대비 상승여력", upside == null || stale ? "최신 자료 확인 대기" : pct(upside))}${line("최근 종가 변동", change == null || stock.chartDelayed ? "확인 대기" : pct(change) + " (" + days.length + "거래일)")}${line("실적·주주환원 분석", "공식 자료 연동 대기")}</dl><p class="caption">목표주가는 전망치이며 상승을 보장하지 않습니다.</p><p class="sources">${sourceLink(url, "기업 실적·투자정보 확인")}</p></section>`;
+}
+
 function stockCard(stock, detail = false) {
   const event = visibleEvent(stock);
   const {price, target, upside} = marketValues(stock);
@@ -189,7 +199,7 @@ function stockCard(stock, detail = false) {
     <div class="ticker">${code}${bookmark}</div>
     <dl class="price-pair"><div><dt>현재가</dt><dd>${priceText}${stock.quoteDelayed && price ? " (이전)" : ""}${bar(price)}</dd></div>
       <div><dt>평균 목표주가</dt><dd>${targetText}${stock.consensusDelayed && target ? " (이전)" : ""}${bar(target)}</dd></div></dl>
-    <div class="detail">${priceChart(stock)}${marketDetails(stock, upside)}
+    <div class="detail">${investmentSection(stock)}${priceChart(stock)}${marketDetails(stock, upside)}
     ${event ? quarterSection(event) : '<p class="caption">확인된 배당 일정 없음</p>'}
     ${history.length ? annualSection(stock.annual) :
       (stock.annual ? '<p class="sources">' + escapeHTML(stock.annual.reportYear) + '년 보통주 주당배당금 확인 대기 · ' + sourceLink(stock.annual.source, "연간 공시") + '</p>' : "")}
@@ -254,11 +264,11 @@ function render() {
   const schedule = currentView === "schedule";
   document.getElementById("main").classList.toggle("schedule-layout", schedule);
   document.getElementById("view-title").textContent = viewTitles[currentView];
-  document.getElementById("schedule-filter").hidden = !schedule;
+  document.getElementById("schedule-filter").hidden = true;
   document.getElementById("list-tools").hidden = schedule;
   let list;
   if (schedule) {
-    const dated = period === "upcoming" ? upcoming : byDate.filter(item => item.day < today).sort((a,b) => b.day.localeCompare(a.day));
+    const dated = upcoming;
     list = dated.map(item => item.stock);
   } else {
     list = stocks.filter(stock => (currentView !== "saved" || favorites.has(stock.code)) &&
@@ -269,7 +279,8 @@ function render() {
         const order = (da >= today ? da : "9999").localeCompare(db >= today ? db : "9999") || db.localeCompare(da);
         if (order) return order;
       } else if (sort.value === "upside") {
-        const order = (marketValues(b).upside ?? -Infinity) - (marketValues(a).upside ?? -Infinity);
+        const valid = s => s.quoteDelayed || s.consensusDelayed ? -Infinity : (marketValues(s).upside ?? -Infinity);
+        const order = valid(b) - valid(a);
         if (order) return order;
       }
       return a.name.localeCompare(b.name, "ko");
