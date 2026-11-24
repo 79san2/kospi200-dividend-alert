@@ -122,6 +122,12 @@ def refresh_prices(stocks, today):
                 previous = stock.get(field, {})
                 if fresh.get(stamp) and fresh[stamp] < previous.get(stamp, ""):
                     raise ValueError("이전 시점 응답")
+                if field == "consensus" and fresh.get("amount") and fresh.get("asOf"):
+                    history = stock.get("targetHistory", {})
+                    if previous.get("amount") and previous.get("asOf"):
+                        history.setdefault(previous["asOf"], previous["amount"])
+                    history[fresh["asOf"]] = fresh["amount"]
+                    stock["targetHistory"] = dict(sorted(history.items())[-60:])
                 stock[field] = fresh
                 stock.pop(field + "Delayed", None)
             except (OSError, ValueError, TypeError, KeyError) as err:
