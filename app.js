@@ -11,6 +11,10 @@ let stocks = [];
 let receivedData = false;
 let period = "upcoming";
 let currentView = "schedule";
+let selectedCode = "";
+let restoreList = null;
+const backButton = document.getElementById("back-to-list");
+const title = document.getElementById("view-title");
 const dayMs = 86400000;
 const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
 const bookmarkKey = "kospi200-dividend-alert.favorites";
@@ -118,7 +122,37 @@ function marketDetails(stock, upside) {
     </dl><p class="sources">${sourceLink(url, "네이버페이 증권에서 확인")}</p></section>`;
 }
 
-function stockCard(stock) {
+function priceChart(stock) {
+  const days = Object.entries(stock.dailyCloses || {})
+    .filter(([day,value]) => /^\d{4}-\d{2}-\d{2}$/.test(day) && Number.isFinite(value) && value > 0)
+    .sort(([a],[b]) => a.localeCompare(b));
+  if (!days.length) return '<section><h3>주가 그래프</h3><p class="caption">일별 종가 자료를 기다리고 있습니다.</p></section>';
+  const values = days.map(([,value]) => value);
+  const low = Math.min(...values), high = Math.max(...values);
+  const last = days.length - 1;
+  const x = i => last ? 8 + 274 * i / last : 145;
+  const y = value => high === low ? 67 : 116 - 98 * (value - low) / (high - low);
+  const points = values.map((value,i) => x(i).toFixed(1) + "," + y(value).toFixed(1)).join(" ");
+  const ticks = [...new Set([high,low])].map(value =>
+    `<line x1="8" x2="282" y1="${y(value)}" y2="${y(value)}"/><text x="354" y="${y(value)+4}" text-anchor="end">${won.format(value)}</text>`).join("");
+  const label = day => day.slice(5).replace("-", ".");
+  return `<section><h3>최근 ${days.length}거래일 종가</h3>
+    <p class="caption">시간외 거래 포함 · 단위 원${stock.chartDelayed ? " · 갱신 지연" : ""}</p>
+    <svg class="price-chart" viewBox="0 0 360 145" role="img" aria-labelledby="chart-title">
+      <title id="chart-title">${escapeHTML(stock.name)} ${days[0][0]}부터 ${days[last][0]}까지 종가. 최저 ${won.format(low)}원, 최고 ${won.format(high)}원.</title>
+      <g>${ticks}</g>
+      <polyline points="${points}" fill="none" stroke="#196547" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="${x(last)}" cy="${y(values[last])}" r="3.4" fill="#196547"/>
+      <text x="8" y="139">${label(days[0][0])}</text>
+      ${last ? `<text x="282" y="139" text-anchor="end">${label(days[last][0])}</text>` : ""}
+    </svg>
+    <details class="daily-table"><summary>날짜별 종가 보기</summary>
+      <table><thead><tr><th>거래일</th><th>종가</th></tr></thead><tbody>
+        ${days.reverse().map(([day,v]) => `<tr><td>${day}</td><td>${won.format(v)}원</td></tr>`).join("")}
+      </tbody></table></details></section>`;
+}
+
+function stockCard(stock, detail = false) {
   const event = visibleEvent(stock);
   const {price, target, upside} = marketValues(stock);
   const priceText = price ? won.format(price) + "원" : "확인 대기";
@@ -136,10 +170,10 @@ function stockCard(stock) {
   const saved = favorites.has(stock.code);
   const name = escapeHTML(stock.name);
   const code = escapeHTML(stock.code);
-  return `<article class="stock" data-code="${code}">
-    <button type="button" class="bookmark" aria-label="${name} 관심 종목" aria-pressed="${saved}">
-      <svg class="icon" aria-hidden="true"><use href="#i-bookmark"/></svg></button>
-    <details><summary>
+  const bookmark = `<button type="button" class="bookmark" aria-label="${name} 관심 종목" aria-pressed="${saved}">
+      <svg class="icon" aria-hidden="true"><use href="#i-bookmark"/></svg></button>`;
+  if (!detail) return `<article class="stock" data-code="${code}">${bookmark}
+    <a class="stock-link" href="#stock/${code}">
       <span class="identity"><strong>${name}</strong><small>${code}</small></span>
       <span class="quote"><strong>${amount == null ? "확인 대기" : won.format(amount) + '<small>원</small>'}</strong>
         <small>${escapeHTML(label || (event?.unavailable ? "공시 확인 중" : "주당 배당금"))}</small></span>
@@ -149,13 +183,18 @@ function stockCard(stock) {
         <span>평균 목표주가 <b>${targetText}</b>${stock.consensusDelayed && target ? " (이전)" : ""}</span>
         ${quoteStamp ? '<small>' + escapeHTML(quoteStamp) + ' 시세</small>' : ""}
       </span>
-    </summary><div class="detail">
-    ${marketDetails(stock, upside)}
+    </a></article>`;
+  const bar = value => price && target ? `<span class="compare-track" aria-hidden="true"><i style="width:${100 * value / Math.max(price,target)}%"></i></span>` : "";
+  return `<article class="stock detail-stock" data-code="${code}">
+    <div class="ticker">${code}${bookmark}</div>
+    <dl class="price-pair"><div><dt>현재가</dt><dd>${priceText}${stock.quoteDelayed && price ? " (이전)" : ""}${bar(price)}</dd></div>
+      <div><dt>평균 목표주가</dt><dd>${targetText}${stock.consensusDelayed && target ? " (이전)" : ""}${bar(target)}</dd></div></dl>
+    <div class="detail">${priceChart(stock)}${marketDetails(stock, upside)}
     ${event ? quarterSection(event) : '<p class="caption">확인된 배당 일정 없음</p>'}
     ${history.length ? annualSection(stock.annual) :
       (stock.annual ? '<p class="sources">' + escapeHTML(stock.annual.reportYear) + '년 보통주 주당배당금 확인 대기 · ' + sourceLink(stock.annual.source, "연간 공시") + '</p>' : "")}
     ${!event && previous.length ? "<dl>" + previous.map(pair => line(...pair)).join("") + "</dl>" : ""}
-    </div></details></article>`;
+    </div></article>`;
 }
 
 function shortDate(iso) {
@@ -189,6 +228,23 @@ function renderOverview(upcoming, today) {
 }
 
 function render() {
+  backButton.hidden = !selectedCode;
+  document.getElementById("count").hidden = Boolean(selectedCode);
+  if (selectedCode) {
+    overview.hidden = true;
+    document.getElementById("main").classList.remove("schedule-layout");
+    for (const id of ["list-tools", "schedule-filter", "more"]) document.getElementById(id).hidden = true;
+    const stock = stocks.find(s => s.code === selectedCode);
+    title.textContent = stock?.name || "종목 상세";
+    document.title = stock ? stock.name + " · 배당 알리미" : "코스피200 배당 알리미";
+    const tableOpen = container.querySelector(".stock")?.dataset.code === selectedCode && container.querySelector(".daily-table")?.open;
+    container.innerHTML = stock ? stockCard(stock, true) : receivedData ? '<p class="empty">목록에서 찾을 수 없는 종목입니다.</p>' : "";
+    if (tableOpen && container.querySelector(".daily-table")) container.querySelector(".daily-table").open = true;
+    updated.hidden = Boolean(stock);
+    return;
+  }
+  updated.hidden = false;
+  document.title = "코스피200 배당 알리미";
   const keyword = search.value.trim().toLowerCase();
   const today = koreaDate.format(new Date());
   const byDate = stocks.map(stock => ({stock, day: visibleEvent(stock)?.lastBuyDate})).filter(item => item.day)
@@ -222,7 +278,6 @@ function render() {
   document.getElementById("count").textContent = receivedData ? list.length + "종목" : "";
   more.hidden = list.length <= limit;
   more.textContent = `종목 더 보기 (${Math.min(list.length, limit)}/${list.length})`;
-  const opened = new Set([...container.querySelectorAll("details[open]")].map(el => el.closest(".stock").dataset.code));
   let lastDay = "";
   const rows = list.slice(0,limit).map(stock => {
     const day = visibleEvent(stock)?.lastBuyDate;
@@ -233,23 +288,36 @@ function render() {
   const empty = keyword && !schedule ? "검색 결과가 없습니다." : currentView === "saved" ? "종목 옆 북마크를 누르면 여기에 모입니다." :
     schedule ? (period === "upcoming" ? "새 매수 마감 일정을 기다리고 있습니다." : "확인된 지난 일정이 없습니다.") : "표시할 종목이 없습니다.";
   container.innerHTML = rows || (receivedData ? '<p class="empty">' + empty + '</p>' : "");
-  for (const card of container.querySelectorAll(".stock")) {
-    if (opened.has(card.dataset.code) || (!schedule && keyword && list.length === 1)) card.querySelector("details").open = true;
+  if (restoreList && receivedData) {
+    const saved = restoreList;
+    restoreList = null;
+    container.querySelector(`a[href="#stock/${saved.code}"]`)?.focus({preventScroll:true});
+    window.scrollTo(0,saved.y);
   }
 }
 
 function selectView() {
   const hash = location.hash.slice(1);
-  currentView = Object.hasOwn(viewTitles, hash) ? hash : "schedule";
+  selectedCode = /^stock\/([A-Z0-9]{6})$/.exec(hash)?.[1] || "";
+  currentView = selectedCode ? "stock" : Object.hasOwn(viewTitles, hash) ? hash : "schedule";
+  restoreList = currentView === history.state?.list?.view ? history.state.list : null;
   for (const button of document.querySelectorAll("[data-view]")) {
     if (button.dataset.view === currentView) button.setAttribute("aria-current", "page");
     else button.removeAttribute("aria-current");
   }
-  search.value = "";
-  limit = pageSize;
-  container.replaceChildren();
+  search.value = restoreList?.keyword || "";
+  limit = restoreList?.limit || pageSize;
+  if (restoreList) {
+    sort.value = restoreList.sort;
+    period = restoreList.period;
+    for (const button of document.querySelectorAll("[data-period]")) {
+      button.setAttribute("aria-pressed", String(button.dataset.period === period));
+    }
+  } else {
+    window.scrollTo(0,0);
+  }
   render();
-  window.scrollTo(0,0);
+  if (selectedCode) title.focus({preventScroll:true});
 }
 
 function navigate(view) {
@@ -261,6 +329,13 @@ function navigate(view) {
 for (const button of document.querySelectorAll("[data-view]")) {
   button.addEventListener("click", () => navigate(button.dataset.view));
 }
+backButton.addEventListener("click", () => {
+  if (history.state?.fromList) history.back();
+  else {
+    history.replaceState(null, "", "#all");
+    selectView();
+  }
+});
 window.addEventListener("hashchange", selectView);
 document.getElementById("open-search").addEventListener("click", () => {
   navigate("all");
@@ -276,6 +351,15 @@ for (const button of document.querySelectorAll("[data-period]")) {
   });
 }
 container.addEventListener("click", event => {
+  const link = event.target.closest(".stock-link");
+  if (link && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey && event.button === 0) {
+    event.preventDefault();
+    const code = link.closest(".stock").dataset.code;
+    history.replaceState({list:{view:currentView,code,keyword:search.value,sort:sort.value,period,limit,y:window.scrollY}}, "");
+    history.pushState({fromList:true}, "", link.hash);
+    selectView();
+    return;
+  }
   const button = event.target.closest(".bookmark");
   if (!button) return;
   const card = button.closest(".stock");

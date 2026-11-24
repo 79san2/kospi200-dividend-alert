@@ -63,11 +63,10 @@ button {-webkit-tap-highlight-color:transparent}
 .date-heading {margin:16px 0 0;padding:0 2px 11px;border-bottom:1px solid var(--line);font-size:13px;color:var(--green);letter-spacing:-.02em}
 .date-heading small {font-size:11px;font-weight:500;color:var(--sub)}
 .stock {position:relative;border-bottom:1px solid #e7ece6}
-.stock summary {list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:7px;min-height:67px;padding:10px 4px 10px 40px;outline-offset:-2px}
+.stock-link {text-decoration:none;color:inherit;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:7px;min-height:67px;padding:10px 4px 10px 40px;outline-offset:-2px}
 .market-preview {grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12px;color:var(--sub);line-height:1.55}
 .market-preview small {font-size:11px;white-space:nowrap;align-self:center}
 .market-preview b {color:var(--green);font-weight:650;white-space:nowrap}
-.stock summary::-webkit-details-marker {display:none}
 .identity,.quote {display:grid;gap:4px;min-width:0}
 .identity {flex:1}
 .identity strong {font-size:16px;line-height:1.25;letter-spacing:-.05em}
@@ -77,7 +76,7 @@ button {-webkit-tap-highlight-color:transparent}
 .quote strong {font-size:17px;letter-spacing:-.04em;white-space:nowrap}
 .quote strong small {font-size:12px;margin-left:2px;font-weight:550}
 .chevron {width:16px;height:16px;color:#65796b}
-details[open] .chevron {transform:rotate(180deg)}
+.stock-link .chevron {transform:rotate(-90deg)}
 .bookmark {z-index:1;position:absolute;left:-5px;top:11px;width:44px;height:44px;padding:0;display:grid;place-items:center;border:0;border-radius:12px;background:transparent;color:#788a7e}
 .bookmark .icon {width:19px;height:19px}
 .bookmark[aria-pressed=true] {color:#236848}
@@ -111,7 +110,7 @@ details[open] .chevron {transform:rotate(180deg)}
 .empty {text-align:center;font-size:14px;color:var(--sub);padding:25px 9px}
 .more {border:1px solid var(--line);border-radius:12px;width:100%;background:#f7f9f5;color:var(--green);padding:12px;margin-top:12px;font-size:14px;font-weight:650}
 @media (hover:hover) {
-  .stock summary:hover,.bookmark:hover,.icon-button:hover {background:#edf3ed;border-radius:10px}
+  .stock-link:hover,.bookmark:hover,.icon-button:hover {background:#edf3ed;border-radius:10px}
 }
 @media (max-width:760px) {
   .mast-inner {padding:11px max(16px,env(safe-area-inset-right)) 11px max(16px,env(safe-area-inset-left));gap:10px}
@@ -128,10 +127,31 @@ details[open] .chevron {transform:rotate(180deg)}
   .panel {padding:18px 16px;border-radius:20px}
   .panel-heading h2 {font-size:21px}
   .segment {margin-top:12px;margin-bottom:3px}
-  .stock summary {min-height:64px}
+  .stock-link {min-height:64px}
   .nav {position:fixed;z-index:4;bottom:0;inset-inline:0;margin:0;border-top:1px solid var(--line);background:#fcfdfb;justify-content:space-evenly;gap:0;padding:4px 6px calc(4px + env(safe-area-inset-bottom))}
   .nav button {flex:1;max-width:150px;flex-direction:column;gap:3px;padding:5px 1px;border-radius:10px;font-size:11px;min-height:52px}
   .nav button[aria-current] {background:transparent}
   .nav button .icon {box-sizing:content-box;padding:2px 14px}
   .nav button[aria-current] .icon {background:#def0da;border-radius:14px}
 }
+
+#back-to-list {min-height:42px;border:0;background:transparent;color:var(--green);font-size:14px;font-weight:650;padding:0 6px;margin:0 0 6px -6px}
+.detail-stock {border:0}
+.ticker {display:flex;align-items:center;justify-content:space-between;min-height:42px;font-size:13px;color:var(--sub);letter-spacing:.04em}
+.ticker .bookmark {position:static}
+.price-pair {display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 14px}
+.price-pair div {border-radius:12px;padding:13px 12px;background:#eef4ee}
+.price-pair dt {color:var(--sub);font-size:12px}
+.price-pair dd {font-size:clamp(16px,4.6vw,26px);font-weight:720;color:var(--green);letter-spacing:-.05em;margin:5px 0 0}
+.compare-track {display:block;height:6px;margin-top:10px;border-radius:5px;background:#dce6dd;overflow:hidden}
+.compare-track i {display:block;height:100%;border-radius:inherit;background:#287153}
+.price-pair div+div .compare-track i {background:#667e99}
+.detail-stock .detail {padding:0;background:transparent}
+.detail-stock .detail h3 {font-size:17px}
+.price-chart {display:block;width:100%;max-height:235px;margin:10px auto 2px}
+.price-chart line {stroke:var(--line);stroke-dasharray:3 4}
+.price-chart text {font:11px sans-serif;fill:var(--sub)}
+.daily-table summary {min-height:40px;padding:10px 0;color:var(--green);font-size:13px;font-weight:650}
+.daily-table table {width:100%;border-collapse:collapse;font-size:13px}
+.daily-table th,.daily-table td {padding:7px 4px;text-align:left;border-bottom:1px solid var(--line)}
+.daily-table th:last-child,.daily-table td:last-child {text-align:right}

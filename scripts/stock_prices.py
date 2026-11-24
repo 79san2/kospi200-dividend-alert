@@ -66,6 +66,30 @@ def consensus(code, today):
     return {"amount": price(entry["priceTargetMean"]), "asOf": date.fromisoformat(entry["createDate"]).isoformat()}
 
 
+def update_chart(stock, today):
+    code = stock["code"]
+    try:
+        rows = fetch_json(STOCK + code + "/price?page=1&pageSize=21")
+        if not isinstance(rows, list):
+            raise ValueError("일별 시세 형식 확인 필요")
+        now = datetime.now(KST)
+        # The integrated daily series includes after-hours trades. Skip a live bar.
+        closed_today = today == now.date() and (now.hour, now.minute) >= (20, 10)
+        closes = {}
+        for row in rows:
+            day = date.fromisoformat(row["localTradedAt"])
+            if day < today or day == today and closed_today:
+                closes[day.isoformat()] = price(row["closePrice"])
+        previous = stock.get("dailyCloses", {})
+        if not closes or previous and max(closes) < max(previous):
+            raise ValueError("최신 일별 시세 없음")
+        stock["dailyCloses"] = dict(sorted(closes.items())[-20:])
+        stock.pop("chartDelayed", None)
+    except (OSError, ValueError, KeyError, TypeError) as err:
+        stock["chartDelayed"] = True
+        logging.warning("%s 종가 갱신 지연 (%s)", code, type(err).__name__)
+
+
 def refresh_prices(stocks, today):
     codes = list(stocks)
     quotes = {}
@@ -103,6 +127,8 @@ def refresh_prices(stocks, today):
             except (OSError, ValueError, TypeError, KeyError) as err:
                 stock[field + "Delayed"] = True
                 logging.warning("%s %s 갱신 지연 (%s)", code, field, type(err).__name__)
+
+        update_chart(stock, today)
 
     with ThreadPoolExecutor(max_workers=4) as executor:
         list(executor.map(update, codes))
