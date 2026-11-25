@@ -172,11 +172,22 @@ def main():
     ir_ok = refresh_public_ir(today, stocks)
     dividends_ok = False
     if key:
-        dividends_ok = refresh_dividends(key, today, stocks, data)
+        try:
+            dividends_ok = refresh_dividends(key, today, stocks, data)
+        except Exception as err:
+            print(f"::warning::OpenDART 갱신 실패 · 다른 자료 유지 ({type(err).__name__})")
     else:
         print("::warning::OpenDART 인증키 미설정 · 배당자료 이전 확인일 유지")
     if not (prices_ok or dividends_ok or ir_ok):
-        sys.exit("자료 수집 실패 · 기존 자료 유지")
+        print("::warning::자료 수집 실패 · 이전 자료 유지")
+    data["collectionStatus"] = {
+        "checkedAt": datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds"),
+        "market": bool(prices_ok), "publicIR": bool(ir_ok),
+        "dart": "updated" if dividends_ok else "failed" if key else "notConfigured",
+        "quotes": sum(bool(s.get("quote", {}).get("amount")) and not s.get("quoteDelayed") for s in stocks.values()),
+        "targets": sum(bool(s.get("consensus", {}).get("amount")) and not s.get("consensusDelayed") for s in stocks.values()),
+        "noticesThrough": data.get("noticesThrough"),
+    }
     data.update(updatedAt=datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds"),
                 membershipDate=roster["updated"], stocks=list(stocks.values()))
     save(ROSTER, roster)
