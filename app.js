@@ -455,6 +455,12 @@ async function loadStocks() {
     stocks = data.stocks;
     receivedData = true;
     updated.textContent = `구성종목 ${stocks.length}개 · 구성 기준 ${data.membershipDate || data.updated || "미확인"} · 배당자료 확인 ${data.updated || "미확인"}`;
+    const status = data.collectionStatus;
+    const health = document.getElementById("collection-health");
+    if (health && status) {
+      health.hidden = false;
+      health.textContent = "수집 점검 " + (status.checkedAt || "").slice(0,16).replace("T"," ") + " · 시세 " + status.quotes + "/" + stocks.length + " · 목표주가 " + status.targets + "/" + stocks.length + " · 배당 공시 " + (status.dart === "updated" ? "조회 성공" : status.dart === "notConfigured" ? "인증키 미등록" : "갱신 실패") + " · 공시 확인 범위 " + (status.noticesThrough || "미확인");
+    }
     render();
   }));
   if (latest === null) updated.textContent = "배당자료를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.";
