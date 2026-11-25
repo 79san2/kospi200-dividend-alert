@@ -10,6 +10,8 @@ let limit = pageSize;
 let stocks = [];
 let receivedData = false;
 let period = "upcoming";
+let calendarOffset = 0;
+let selectedDay = "";
 let currentView = "schedule";
 let selectedCode = "";
 let restoreList = null;
@@ -243,11 +245,32 @@ function renderOverview(upcoming, today) {
     <ul class="week" aria-label="매수 마감 주간">${week}</ul></div>`;
 }
 
+function renderCalendar(upcoming, today) {
+  const el = document.getElementById("calendar");
+  if (!el) return;
+  el.hidden = currentView !== "schedule" || !receivedData;
+  if (el.hidden) return;
+  const [y,m] = today.split("-").map(Number);
+  const first = new Date(Date.UTC(y,m-1+calendarOffset,1));
+  const year = first.getUTCFullYear(), month = first.getUTCMonth();
+  const total = new Date(Date.UTC(year,month+1,0)).getUTCDate();
+  const counts = new Map();
+  for (const item of upcoming) counts.set(item.day,(counts.get(item.day)||0)+1);
+  const cells = Array.from({length:first.getUTCDay()},()=>'<span></span>');
+  for(let d=1;d<=total;d++){
+    const iso = new Date(Date.UTC(year,month,d)).toISOString().slice(0,10);
+    const n = counts.get(iso)||0;
+    cells.push('<button type="button" data-day="'+iso+'" aria-pressed="'+(selectedDay===iso)+'" aria-label="'+iso+' 매수 마감 '+n+'종목" '+(iso<today?'disabled':'')+' class="'+(n?'has-event ':'')+(iso===today?'today':'')+'"><b>'+d+'</b><small>'+(n?n+'종목':'&nbsp;')+'</small></button>');
+  }
+  el.innerHTML = '<div class="cal-head"><button type="button" data-month="-1" aria-label="이전 달" '+(calendarOffset===0?'disabled':'')+'>‹</button><h3>'+year+'년 '+(month+1)+'월</h3><button type="button" data-month="1" aria-label="다음 달" '+(calendarOffset===2?'disabled':'')+'>›</button></div><div class="cal-grid">'+weekdays.map(w=>'<span class="cal-weekday">'+w+'</span>').join('')+cells.join('')+'</div><div class="cal-footer"><span>● 확정 매수 마감일</span><button type="button" data-clear-day aria-pressed="'+(!selectedDay)+'">전체 예정 일정</button></div><p class="caption">공식 자료로 확인된 날짜만 표시합니다. 일정이 없는 날짜는 미발표일 수 있습니다.</p>';
+}
+
 function render() {
   backButton.hidden = !selectedCode;
   document.getElementById("count").hidden = Boolean(selectedCode);
   if (selectedCode) {
     overview.hidden = true;
+    if (document.getElementById("calendar")) document.getElementById("calendar").hidden = true;
     document.getElementById("main").classList.remove("schedule-layout");
     for (const id of ["list-tools", "schedule-filter", "more"]) document.getElementById(id).hidden = true;
     const stock = stocks.find(s => s.code === selectedCode);
@@ -267,6 +290,7 @@ function render() {
     .sort((a, b) => a.day.localeCompare(b.day) || a.stock.name.localeCompare(b.stock.name, "ko"));
   const upcoming = byDate.filter(item => item.day >= today);
   renderOverview(upcoming, today);
+  renderCalendar(upcoming, today);
   const schedule = currentView === "schedule";
   document.getElementById("main").classList.toggle("schedule-layout", schedule);
   document.getElementById("view-title").textContent = viewTitles[currentView];
@@ -274,7 +298,8 @@ function render() {
   document.getElementById("list-tools").hidden = schedule;
   let list;
   if (schedule) {
-    const dated = upcoming;
+    const dated = selectedDay ? upcoming.filter(item => item.day === selectedDay) : upcoming;
+    title.textContent = selectedDay ? shortDate(selectedDay) + " 매수 마감" : "다가오는 매수 마감 일정";
     list = dated.map(item => item.stock);
   } else {
     list = stocks.filter(stock => (currentView !== "saved" || favorites.has(stock.code)) &&
@@ -303,7 +328,7 @@ function render() {
     return heading + stockCard(stock);
   }).join("");
   const empty = keyword && !schedule ? "검색 결과가 없습니다." : currentView === "saved" ? "종목 옆 북마크를 누르면 여기에 모입니다." :
-    schedule ? (period === "upcoming" ? "새 매수 마감 일정을 기다리고 있습니다." : "확인된 지난 일정이 없습니다.") : "표시할 종목이 없습니다.";
+    schedule ? (selectedDay ? "선택한 날짜에 확인된 매수 마감 일정이 없습니다." : "새 매수 마감 일정을 기다리고 있습니다.") : "표시할 종목이 없습니다.";
   container.innerHTML = rows || (receivedData ? '<p class="empty">' + empty + '</p>' : "");
   if (restoreList && receivedData) {
     const saved = restoreList;
@@ -440,6 +465,19 @@ sort.addEventListener("change", resetList);
 more.addEventListener("click", () => {
   limit += pageSize;
   render();
+});
+document.getElementById("calendar")?.addEventListener("click", event => {
+  const button = event.target.closest("button");
+  if (!button || button.disabled) return;
+  if (button.dataset.month) {
+    calendarOffset = Math.max(0, Math.min(2, calendarOffset + Number(button.dataset.month)));
+    selectedDay = "";
+  } else if (button.dataset.day) {
+    selectedDay = selectedDay === button.dataset.day ? "" : button.dataset.day;
+  } else if (button.hasAttribute("data-clear-day")) {
+    selectedDay = "";
+  }
+  resetList();
 });
 selectView();
 loadStocks();
