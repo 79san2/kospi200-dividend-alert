@@ -74,7 +74,7 @@ def refresh_members():
     except Exception as err:
         if not saved["stocks"]:
             raise
-        print(f"::warning::이전 구성종목 목록 유지 ({type(err).__name__})")
+        print(f"::warning::이전 구성종목 목록 유지 ({safe_error(err)})")
         return saved
 
 
@@ -88,16 +88,21 @@ def refresh_public_ir(today, stocks):
                 stock["quarter"] = {**(prev if event["recordDate"] == prev.get("recordDate") else {}), **event}
                 return True
     except Exception as err:
-        print(f"::warning::삼성전자 IR 갱신 지연 ({type(err).__name__})")
+        print(f"::warning::삼성전자 IR 갱신 지연 ({safe_error(err)})")
 
     return False
+
+
+def safe_error(err):
+    match = re.fullmatch(r"OpenDART 응답 (\d{3})", str(err))
+    return f"OpenDART 상태 {match.group(1)}" if match else type(err).__name__
 
 
 def refresh_dividends(key, today, stocks, data):
     try:
         mapping = corp_codes(key)
     except Exception as err:
-        print(f"::warning::저장된 기업 고유번호 사용 ({type(err).__name__})")
+        print(f"::warning::저장된 기업 고유번호 사용 ({safe_error(err)})")
         mapping = {}
     for code, stock in stocks.items():
         if code in mapping:
@@ -111,7 +116,7 @@ def refresh_dividends(key, today, stocks, data):
         notices = cash_notices(key, stocks, start, today)
         notices_ok = True
     except Exception as err:
-        print(f"::warning::배당결정 목록 수집 지연 ({type(err).__name__})")
+        print(f"::warning::배당결정 목록 수집 지연 ({safe_error(err)})")
         notices = {}
     calendar = exchange_calendars.get_calendar("XKRX")
 
@@ -126,7 +131,7 @@ def refresh_dividends(key, today, stocks, data):
                     stock["annual"] = annual
                 checked = True
             except Exception as err:
-                print(f"::warning::{code} 연간 공시 갱신 지연 ({type(err).__name__})")
+                print(f"::warning::{code} 연간 공시 갱신 지연 ({safe_error(err)})")
         candidates = {row["rcept_no"]: row for row in notices.get(code, [])}
         pending = stock.pop("pendingNotice", None)
         if pending:
@@ -138,7 +143,7 @@ def refresh_dividends(key, today, stocks, data):
             try:
                 event = decision_data(row, today, calendar)
             except Exception as err:
-                print(f"::warning::{code} 결정 공시 본문 확인 대기 ({type(err).__name__})")
+                print(f"::warning::{code} 결정 공시 본문 확인 대기 ({safe_error(err)})")
                 stock["pendingNotice"] = {k: row.get(k, "") for k in ("rcept_no", "rcept_dt", "report_nm", "rm")}
                 break
             if event is not None:
@@ -175,7 +180,7 @@ def main():
         try:
             dividends_ok = refresh_dividends(key, today, stocks, data)
         except Exception as err:
-            print(f"::warning::OpenDART 갱신 실패 · 다른 자료 유지 ({type(err).__name__})")
+            print(f"::warning::OpenDART 갱신 실패 · 다른 자료 유지 ({safe_error(err)})")
     else:
         print("::warning::OpenDART 인증키 미설정 · 배당자료 이전 확인일 유지")
     if not (prices_ok or dividends_ok or ir_ok):
