@@ -109,7 +109,7 @@ def refresh_dividends(key, today, stocks, data):
             stock["corpCode"] = mapping[code]
 
     first = today - timedelta(days=85)
-    checkpoint = data.get("noticesThrough")
+    checkpoint = data.get("expandedNoticesThrough")
     start = max(first, date.fromisoformat(checkpoint) - timedelta(days=5)) if checkpoint else first
     notices_ok = False
     try:
@@ -161,6 +161,7 @@ def refresh_dividends(key, today, stocks, data):
         return False
     if notices_ok:
         data["noticesThrough"] = today.isoformat()
+        data["expandedNoticesThrough"] = today.isoformat()
     data["updated"] = today.isoformat()
     annual_count = sum(bool(s.get("annual", {}).get("history")) for s in stocks.values())
     dates = sum(bool(s.get("decision", {}).get("recordDate") or s.get("quarter")) for s in stocks.values())
