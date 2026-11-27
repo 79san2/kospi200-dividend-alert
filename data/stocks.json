@@ -11857,15 +11857,16 @@
     }
   ],
   "membershipDate": "2026-11-27",
-  "updatedAt": "2026-11-28T07:51:10+09:00",
+  "updatedAt": "2026-11-28T08:12:00+09:00",
   "noticesThrough": "2026-11-28",
   "collectionStatus": {
-    "checkedAt": "2026-11-28T07:51:10+09:00",
+    "checkedAt": "2026-11-28T08:12:00+09:00",
     "market": true,
     "publicIR": true,
     "dart": "updated",
     "quotes": 201,
     "targets": 180,
     "noticesThrough": "2026-11-28"
-  }
+  },
+  "expandedNoticesThrough": "2026-11-28"
 }
