@@ -117,6 +117,9 @@ def refresh_dividends(key, today, stocks, data):
         notices_ok = True
     except Exception as err:
         print(f"::warning::배당결정 목록 수집 지연 ({safe_error(err)})")
+        if safe_error(err) == "OpenDART 상태 901":
+            print("::warning::OpenDART 인증 상태 확인 필요 · 반복 API 요청 중단 · 기존 배당자료 유지")
+            return False
         notices = {}
     calendar = exchange_calendars.get_calendar("XKRX")
 
