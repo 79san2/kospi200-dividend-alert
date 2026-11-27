@@ -95,7 +95,7 @@ def annual_data(key, corp, today):
 
 
 def cash_notices(key, tickers, start, end):
-    params = dict(corp_cls="Y", pblntf_ty="I", last_reprt_at="Y", page_count=100,
+    params = dict(corp_cls="Y", last_reprt_at="Y", page_count=100,
                   bgn_de=start.strftime("%Y%m%d"), end_de=end.strftime("%Y%m%d"))
     results = {}
     page = 1
@@ -104,7 +104,7 @@ def cash_notices(key, tickers, start, end):
         for row in res.get("list", []):
             title = re.sub(r"[\s·ㆍ・]", "", row["report_nm"])
             code = row.get("stock_code")
-            if (code in tickers and "현금현물배당결정" in title
+            if (code in tickers and ("현금현물배당결정" in title or ("배당" in title and "기준일" in title and "설정" in title))
                     and not any(term in title for term in ("자회사", "종속회사", "주요경영사항", "타법인"))):
                 results.setdefault(code, []).append(row)
         if page >= int(res.get("total_page", 0)):
@@ -143,6 +143,10 @@ def decision_data(row, today, calendar):
     header = re.sub(r"\s+", "", header).partition("배당구분")[0]
     if any(term in header for term in ("자회사", "종속회사", "주요경영사항", "타법인")):
         return None
+    is_record_notice = "배당결정" not in re.sub(r"\s+", "", row["report_nm"])
+    if is_record_notice:
+        event["period"] = "배당기준일 확정 · 금액 미확정"
+        event["recordOnly"] = True
     for tr in tree.xpath("//tr"):
         cells = [" ".join(" ".join(cell.itertext()).split()) for cell in tr.xpath("./th|./td")]
         if len(cells) < 2:
@@ -152,13 +156,13 @@ def decision_data(row, today, calendar):
             event["period"] = cells[-1]
         elif label == "1주당배당금(원)" and len(cells) >= 3 and "보통주" in cells[1]:
             event["amount"] = number(cells[2])
-        elif label == "배당기준일":
+        elif label == "배당기준일" or (is_record_notice and label in ("기준일", "주주명부폐쇄기준일")):
             event["recordDate"] = iso_date(cells[-1])
         elif label == "배당금지급예정일자":
             event["paymentDate"] = iso_date(cells[-1])
         elif label == "차등배당여부" and cells[-1].replace(" ", "") == "해당":
             event["differential"] = True
-    if not event.get("period") or "recordDate" not in event:
+    if not event.get("period") or "recordDate" not in event or (is_record_notice and not event.get("recordDate")):
         raise ValueError("배당결정 공시 양식 확인 필요")
     if event["recordDate"] and calendar is not None:
         day = date.fromisoformat(event["recordDate"])
