@@ -157,7 +157,7 @@ function priceChart(stock) {
 function investmentSection(stock) {
   const {upside} = marketValues(stock);
   const stale = stock.quoteDelayed || stock.consensusDelayed;
-  const days = Object.entries(stock.dailyCloses || {}).filter(([d,v]) => /^\\d{4}-\\d{2}-\\d{2}$/.test(d) && Number.isFinite(v) && v > 0).sort(([a],[b]) => a.localeCompare(b));
+  const days = Object.entries(stock.dailyCloses || {}).filter(([d,v]) => /^\d{4}-\d{2}-\d{2}$/.test(d) && Number.isFinite(v) && v > 0).sort(([a],[b]) => a.localeCompare(b));
   const change = days.length > 1 ? (days[days.length-1][1] / days[0][1] - 1) * 100 : null;
   const pct = n => (n > 0 ? "+" : "") + n.toFixed(1) + "%";
   const url = "https://finance.naver.com/item/coinfo.naver?code=" + encodeURIComponent(stock.code);
