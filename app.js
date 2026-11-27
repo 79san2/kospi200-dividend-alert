@@ -9,6 +9,7 @@ const pageSize = 15;
 let limit = pageSize;
 let stocks = [];
 let receivedData = false;
+let dividendStatus = null;
 let period = "upcoming";
 let calendarOffset = 0;
 let selectedDay = "";
@@ -225,7 +226,7 @@ function renderOverview(upcoming, today) {
   overview.hidden = currentView !== "schedule" || !receivedData;
   if (overview.hidden) return;
   if (!next) {
-    overview.innerHTML = '<div class="hero"><p class="hero-label">가장 가까운 매수 마감</p><h2 class="no-date">예정된 일정이 없습니다</h2><p class="hero-info">배당 결정 공시를 확인하면 날짜가 표시됩니다.</p></div>';
+    overview.innerHTML = '<div class="hero"><p class="hero-label">가장 가까운 매수 마감</p><h2 class="no-date">확인된 매수 일정 없음</h2><p class="hero-info">' + (dividendStatus === "updated" ? "배당 결정 공시를 확인하면 날짜가 표시됩니다." : "배당 공시 갱신이 확인되지 않아 신규 일정이 누락될 수 있습니다.") + '</p></div>';
     return;
   }
   const day = new Date(next + "T00:00:00Z");
@@ -456,6 +457,7 @@ async function loadStocks() {
     receivedData = true;
     updated.textContent = `구성종목 ${stocks.length}개 · 구성 기준 ${data.membershipDate || data.updated || "미확인"} · 배당자료 확인 ${data.updated || "미확인"}`;
     const status = data.collectionStatus;
+    dividendStatus = status?.dart || null;
     const health = document.getElementById("collection-health");
     if (health && status) {
       health.hidden = false;
